@@ -3,7 +3,7 @@
 ## 🌊 Sobre o Projeto
 Este é um projeto individual desenvolvido para a **São Paulo Tech School**. O sistema explora a cultura, as origens e a história do surfe, com um foco central e profundo na **trajetória das mulheres neste esporte**. 
 
-Desde as raízes ancestrais na Polinésia até a chegada em Santos na década de 30, o projeto destaca as pioneiras que desafiaram as ondas e o machismo para conquistar seu espaço no mar. É um tributo à resiliência feminina, conectando o passado histórico à atual "Brazilian Storm" feminina.
+Desde as raízes ancestrais na Polinésia até a chegada em Santos na década de 30, o projeto destaca as pioneiras que desafiaram as ondas e o preconceito para conquistar seu espaço no mar. É um tributo à resiliência feminina, conectando o passado histórico à atual "Brazilian Storm" feminina.
 
 ---
 
@@ -26,7 +26,7 @@ O projeto foi construído utilizando as disciplinas do 1º semestre de ADS:
 - **Página Home:** Narrativa histórica do surfe com ênfase no pioneirismo feminino.
 - **Login & Cadastro:** Identificação de perfil e coleta de dados.
 - **Módulo de Interação:** Avaliação de frases e marcos históricos de mulheres icônicas do surfe e um quiz para verificar se você é surfista prego ou não.
-- **Dashboard de Telemetria:** Gráficos em tempo real que analisam o engajamento e a representatividade dos usuários.
+- **Dashboard:** Gráficos em tempo real que analisam o engajamento e a representatividade dos usuários.
 - **Sobre:** A conexão entre a história do surfe feminino e as motivações que provocaram a autora do projeto ao desenvolver esse tema e outros gostos.
 
 ---
