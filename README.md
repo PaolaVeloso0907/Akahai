@@ -1,4 +1,4 @@
-# The Surf Journey: de Santos para o mundo 🏄‍♂️🇧🇷
+# A jornada do Surfe
 
 ## 🌊 Sobre o Projeto
 Este é um projeto individual desenvolvido para a **São Paulo Tech School**. O sistema explora a cultura, as origens e a história do surfe, com um foco central e profundo na **trajetória das mulheres neste esporte**. 
