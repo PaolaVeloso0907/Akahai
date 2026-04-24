@@ -1,4 +1,4 @@
-# A jornada do Surfe
+# The Surf Journey
 
 ## 🌊 Sobre o Projeto
 Este é um projeto individual desenvolvido para a **São Paulo Tech School**. O sistema explora a cultura, as origens e a história do surfe, com um foco central e profundo na **trajetória das mulheres neste esporte**. 
@@ -34,6 +34,7 @@ O projeto foi construído utilizando as disciplinas do 1º semestre de ADS:
 ## 📝 Documentação e Planejamento
 
 O desenvolvimento seguiu as boas práticas do PMBOK e metodologias ágeis:
+* [link para a documentação do projeto](https://1drv.ms/w/c/f273a2463d1f8d25/IQDUcrLXqrcDS62WujiU9t2DATx5kYbwQ9SLBOV2RrXv5J4?e=HSmkds)
 * [Link para o Quadro do Trello](https://trello.com/b/FHQvgHeK/the-surf-journey)
 * **Modelo Lógico do Banco de Dados:** (AInda a ser definido!!!!!!)
 
