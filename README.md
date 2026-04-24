@@ -1,9 +1,9 @@
 # Akahai: The Surf Journey
 
 ## 🌊 Sobre o Projeto
-Este é um projeto individual desenvolvido para a **São Paulo Tech School**. O sistema explora a cultura, as origens e a história do surfe, com um foco central e profundo na **trajetória das mulheres neste esporte**. 
+Este é um projeto individual desenvolvido para a **São Paulo Tech School**. O sistema explora a cultura, as origens e a história do surfe, com um foco central no lifestyle do surfe do que o esporte em si. 
 
-Desde as raízes ancestrais na Polinésia até a chegada em Santos na década de 30, o projeto destaca as pioneiras que desafiaram as ondas e o preconceito para conquistar seu espaço no mar. É um tributo à resiliência feminina, conectando o passado histórico à atual "Brazilian Storm" feminina.
+Desde as raízes ancestrais na Polinésia até a chegada em Santos na década de 30, o projeto destaca os pioneiros que desafiaram as ondas e o preconceito dos colonizadores para conquistar seu espaço no mar. É um tributo à resiliência feminina, conectando o passado histórico aos tempos atuais.
 
 ---
 
