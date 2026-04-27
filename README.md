@@ -34,9 +34,10 @@ O projeto foi construído utilizando as disciplinas do 1º semestre de ADS:
 ## 📝 Documentação e Planejamento
 
 O desenvolvimento seguiu as boas práticas do PMBOK e metodologias ágeis:
+* [Link para o protótipo do projeto](https://www.figma.com/design/ANvV6NAXEslzqoYEwk2MbD/Akahai--The-Surf-Journey?node-id=0-1&t=czRetmbVp5HDNk92-1)
 * [Link para a documentação do projeto](https://1drv.ms/w/c/f273a2463d1f8d25/IQDUcrLXqrcDS62WujiU9t2DATx5kYbwQ9SLBOV2RrXv5J4?e=HSmkds)
 * [Link para o Quadro do Trello](https://trello.com/b/FHQvgHeK/the-surf-journey)
-* **Modelo Lógico do Banco de Dados:** (AInda a ser definido!!!!!!)
+* **Modelo Lógico do Banco de Dados:** (Ainda a ser definido!!!!!!)
 
 ---
 
@@ -45,6 +46,7 @@ O desenvolvimento seguiu as boas práticas do PMBOK e metodologias ágeis:
 Este projeto representa a minha conexão pessoal com o esporte e a minha linhagem familiar. Assim como o surfe exige resiliência para enfrentar as ondas, minha trajetória acadêmica é movida pela determinação e união feminina.
 
 **Desenvolvido por:** Lola (Estudante de ADS na SPTech)
+
 **Gratidão especial:** Ao meu marido João Vítor, à minha mãe e irmã, e sogros pelo apoio constante.
 
 ---
