@@ -3,21 +3,16 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    text-decoration: none;
 }
 
 body {
     font-family: 'Montserrat', sans-serif;
     background-color: #efe1ce;
     color: #536267;
-    overflow-x: hidden;
 }
 
-a {
-    text-decoration: none;
-    color: inherit;
-}
-
-/* CContainer Principal */
+/* Container Principal */
 .container-1 {
     position: relative;
     height: 960px;
@@ -118,15 +113,14 @@ a {
     margin: 0;
 }
 
-/* ELEMENTOS DECORATIVOS */
+/* decoração */
 .estrelaDeco {
     position: absolute;
-    width: 256px;
+    width: 250px;
     height: 256px;
     left: 380px;
-    top: 50px;
+    top: 90px;
     filter: blur(2px);
-    pointer-events: none;
 }
 
 .solDeco {
