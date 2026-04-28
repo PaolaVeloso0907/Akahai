@@ -1,0 +1,375 @@
+/* Configurações básicas */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #efe1ce;
+    color: #536267;
+}
+
+/* Container Principal */
+.container-1 {
+    position: relative;
+    height: 960px;
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.nav-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1; 
+}
+
+.navbar {
+    position: relative;
+    z-index: 10;
+    max-width: 1109px;
+    width: 90%; 
+    margin: 43px auto 0;
+    background-color: #ebdcc5;
+    border-radius: 25px;
+    height: 87px;
+    padding: 0 50px;
+    display: flex;
+    align-items: center;
+}
+
+.nav-lista {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+.nav-lista a {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+    color: #c79f61;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.nav-lista a:hover {
+    opacity: 0.8;
+}
+
+.nav-logo img {
+    width: 67px;
+    height: 67px;
+    object-fit: contain;
+    display: block;
+}
+
+.nav-lista button {
+    background-color: #c79f61;
+    border: none;
+    border-radius: 10px;
+    padding: 8px 20px;
+    cursor: pointer;
+}
+
+.btn-entrar {
+    color: #efe1ce !important;
+    font-weight: 500;
+    text-decoration: none;
+}
+
+/* Container 2*/
+.container-2 {
+    background-color: #efe1ce;
+    padding: 80px 91px;
+    display: flex;
+    gap: 80px;
+    align-items: flex-start;
+    min-height: 700px;
+}
+
+.content-titulo-BemVindo {
+    flex: 1;
+    max-width: 660px;
+}
+
+.content-titulo-BemVindo h2 {
+    font-family: 'DynaPuff', sans-serif;
+    font-size: 70px;
+    font-weight: 600;
+    color: #8faab4;
+    line-height: 1.2;
+    margin-bottom: 40px;
+    text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+    letter-spacing: 6px;
+}
+
+.content-titulo-BemVindo p {
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 1.7;
+    color: #536267;
+    margin-bottom: 20px;
+    text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.content-titulo-BemVindo strong {
+    font-weight: 700;
+}
+
+.btn-ver-mais {
+    display: inline-block;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    font-size: 20px;
+    color: #536267;
+    text-decoration: none;
+    margin-top: 20px;
+    text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+    transition: 0.3s;
+}
+
+.btn-ver-mais:hover {
+    transform: translateX(10px); 
+}
+
+/* Lado direito */
+.content-BemVindo-img {
+    position: relative;
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+}
+.foto-surfista {
+    width: 100%;
+    max-width: 504px;
+    height: auto;
+    display: block;
+}
+
+/* Container 3 */
+.container-3 {
+    background-color: #b4af91;
+    min-height: 760px;
+    width: 100%;
+}
+
+.memorial-btns {
+    background-color: #e6e1c0;
+    height: 106px;
+    display: flex;
+    align-items: center;
+    padding: 0 48px;
+}
+
+.tab {
+    background: none;
+    border: none;
+    border-bottom: 2px solid transparent;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 30px;
+    color: #c79f61;
+    cursor: pointer;
+    padding: 0 30px;
+    height: 100%;
+    flex: 1;
+    text-align: center;
+}
+
+.tab.ativo {
+    border-bottom: 5px solid #c79f61;
+}
+
+.memorial-conteudo {
+    display: flex;
+    align-items: flex-start;
+    padding: 60px 50px 80px;
+    gap: 60px;
+}
+
+.memorial-esquerda {
+    width: 424px;
+    flex-shrink: 0;
+    position: relative;
+}
+
+.foto-memorial {
+    width: 100%;
+    max-width: 424px;
+    height: 565px;
+    object-fit: cover;
+    display: block;
+    border-radius: 10px;
+}
+
+/* Lado Direito */
+.memorial-direita {
+    flex: 1;
+    padding-top: 30px;
+    position: relative;
+    min-height: 565px;
+}
+
+.memorial-direita h2 {
+    font-family: 'DynaPuff', sans-serif;
+    font-size: 72px;
+    font-weight: 600;
+    color: #efe1ce;
+    letter-spacing: 6px;
+    line-height: 1.1;
+    text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+    margin-bottom: 30px;
+}
+
+.memorial-direita p {
+    font-family: 'Montserrat', sans-serif; 
+    font-size: 18px;
+    font-weight: 500;
+    color: #efe1ce;
+    line-height: 1.7;
+    text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+    max-width: 658px;
+}
+
+.memorial-direita strong {
+    color: #ebdcc5;
+}
+
+.ver-mais-claro {
+    color: #efe1ce !important;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    text-decoration: none;
+    margin-top: 25px;
+    display: inline-block;
+    text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.logo-memorial {
+    position: absolute;
+    right: 20px;
+    bottom: 0;
+    width: 102px;
+    height: 102px;
+    opacity: 0.6; 
+}
+
+/* Container 5 */
+.container-5 {
+    background-color: #efe1ce;
+    padding: 80px 141px;
+}
+
+.pranchas-titulo {
+    font-family: 'DynaPuff', sans-serif;
+    font-size: 56px;
+    font-weight: 600;
+    color: #c0c394;
+    text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+    letter-spacing: 5px;
+    margin-bottom: 50px;
+    line-height: 1.2;
+    max-width: 927px;
+}
+
+.pranchas-card {
+    background-color: #fff6ea;
+    border-radius: 51px;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+    padding: 50px 80px 70px;
+    display: flex;
+    align-items: center; 
+    justify-content: center; 
+    min-height: 595px;
+    gap: 30px;
+    position: relative; 
+}
+
+.prancha-img {
+    width: 1100px; 
+    height: 400px;
+}
+
+.btn-jogar {
+    background-color: #c0c394;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    padding: 8px 35px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+    cursor: pointer;
+    position: absolute;
+    bottom: 40px;
+    right: 60px;
+    transition: background-color 0.3s;
+}
+
+.btn-jogar:hover {
+    background-color: #aeb382;
+}
+
+/* Rodapé */
+.rodape {
+    background-color: #e6e1c0;
+    height: 167px;
+    display: flex;
+    align-items: center;
+    padding: 0 41px;
+    justify-content: space-between;
+}
+
+.logo-rodape {
+    width: 119px;
+    height: 119px;
+    object-fit: contain;
+}
+
+.content-footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px; 
+}
+
+.social-icons {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    align-items: center;
+}
+
+.social-icons a {
+    display: flex;
+    align-items: center;
+}
+
+.social-icons img {
+    width: 47px;
+    height: 48px;
+    object-fit: contain;
+    display: block;
+    background-color:#a78652;
+}
+
+.creditos {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    font-size: 18px;
+    color: #a78652;
+    margin: 0; 
+}
