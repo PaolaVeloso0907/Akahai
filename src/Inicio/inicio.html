@@ -14,7 +14,7 @@
 </head>
 
 <body>
-    <div class="container-1">
+    <header class="container-1">
         <img class="nav-img" src="../Imagens/banner/banner.png">
 
         <nav class="navbar">
@@ -29,7 +29,7 @@
                 <li><button><a href="../Login/login.html" class="btn-entrar">ENTRAR</a></li></button>
             </ul>
         </nav>
-    </div>
+    </header>
 
     <main>
         <audio id="musicaFundo" autoplay loop>
@@ -60,9 +60,9 @@
 
         <div class="container-3">
             <div class="memorial-btns">
-                <button class="tab ativo">DUKE KAHANAMOKU</button>
-                <button class="tab">ISABEL LETHAM</button>
-                <button class="tab">SILVANA LIMA</button>
+                <button class="tab" onclick="exibirDuke()">DUKE KAHANAMOKU</button>
+                <button class="tab" onclick="exibirIsabel()">ISABEL LETHAM</button>
+                <button class="tab" onclick="exibirSilvana()">SILVANA LIMA</button>
             </div>
 
             <div class="memorial-conteudo" id="duke">
@@ -79,13 +79,13 @@
                         popularizar o surfe mundialmente, especialmente nos EUA e Austrália, agindo como um
                         embaixador cultural do Havaí.
                     </p>
-                    <a href="#" class="ver-mais ver-mais-claro">VER MAIS →</a>
+                    <a href="#" class="ver-mais">VER MAIS →</a>
                     <img class="logo-memorial" src="../Imagens/icons/logo-transparente.png" alt="">
                 </div>
             </div>
         </div>
 
-        <div class="container-5">
+        <div class="container-4">
             <h2 class="pranchas-titulo">Cada prancha tem uma história. Qual é a sua?</h2>
 
             <div class="pranchas-card">
@@ -99,13 +99,19 @@
 
 
     <footer class="rodape">
-        <img src="../img/icons/logo-transparente.png" alt="Akahai" class="logo-rodape">
+        <img src="../Imagens/icons/logo-transparente.png" alt="Akahai" class="logo-rodape">
 
         <div class="content-footer">
             <div class="social-icons">
-                <a href="#"><img src="../img/icons/instagram.svg" alt="Instagram"></img></a>
-                <a href="#"><img src="../img/icons/linkedin.svg" alt="LinkedIn"></img></a>
-                <a href="#"><img src="../img/icons/github.svg" alt="GitHub"></img></a>
+                <a href="#" class="btn-social">
+                    <img src="../Imagens/icons/instagram.svg" alt="Instagram">
+                </a>
+                <a href="#" class="btn-social">
+                    <img src="../Imagens/icons/linkedin.svg" alt="LinkedIn">
+                </a>
+                <a href="#" class="btn-social">
+                    <img src="../Imagens/icons/github.svg" alt="GitHub">
+                </a>
             </div>
             <p class="creditos">made with ♥ by @PaolaVeloso0907</p>
         </div>
