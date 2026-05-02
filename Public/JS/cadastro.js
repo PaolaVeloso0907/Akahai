@@ -1,4 +1,4 @@
-let listaDeSurfistas = [];
+let listaDeSurfistas = []; // Lista para armazenar os dados do select
 
 function cadastrar() {
   var nomeVar = ipt_nome.value;
