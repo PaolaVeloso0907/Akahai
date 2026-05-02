@@ -1,18 +1,33 @@
-function cadastrar() {
+let listaDeSurfistas = [];
 
-  //Recupere o valor da nova input pelo nome do id
-  // Agora vá para o método fetch logo abaixo
+function cadastrar() {
   var nomeVar = ipt_nome.value;
   var emailVar = ipt_email.value;
   var senhaVar = ipt_senha.value;
   var confirmacaoSenhaVar = ipt_confirmarSenha.value;
+  var ehSurfista = ipt_surfista.value;
 
-  var valido = ehValido(nomeVar, emailVar, senhaVar, confirmacaoSenhaVar)
+  listaDeSurfistas.push(respostaUsuario); // adicionando as respostas do select na lista
 
-  if(!valido) {
+  let totalSurfistas = 0;
+  let totalNaoSurfistas = 0;
+
+  for (let i = 0; i < listaDeSurfistas.length; i++) { // percorrendo a lista para verificar as respostas e armazenar elas na lista para futuramente poder utilizar na Dashboard
+
+    if (listaDeSurfistas[i] == "Sim") {
+      totalSurfistas++; 
+    } else {
+      totalNaoSurfistas++; 
+    }
+
+  }
+
+  var valido = ehValido(nomeVar, emailVar, senhaVar, confirmacaoSenhaVar);
+
+  if (!valido) {
     return;
   }
-  
+
   // Enviando o valor da nova input
   fetch("/usuarios/cadastrar", {
     method: "POST",
@@ -81,6 +96,11 @@ function ehValido(nomeVar, emailVar, senhaVar, confirmacaoSenhaVar) {
 
   if (confirmacaoSenhaVar != senhaVar) {
     mensagem_cadastro.innerHTML = "As senhas devem ser iguais!";
+    return false;
+  }
+
+  if (ehSurfista == "") {
+    mensagem_cadastro.innerHTML = "Por favor, selecione se você já é surfista!";
     return false;
   }
 
