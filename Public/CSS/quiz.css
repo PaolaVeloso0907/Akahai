@@ -1,0 +1,85 @@
+/* Configurações básicas */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+}
+
+main {
+  width: 100%;
+  height: 100vh;
+}
+
+.container-video {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.main-video {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+
+.container-unico {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+
+  h1 {
+    color: #ecddc9;
+    text-align: center;
+    text-shadow: 0 8px 8px rgba(0, 0, 0, 0.4);
+    font-family: DynaPuff;
+    font-size: 48px;
+    font-weight: 500;
+  }
+
+  p {
+    color: #ecddc9;
+    text-align: center;
+    text-shadow: 0 4px 4px rgba(0, 0, 0, 0.4);
+    font-family: Montserrat;
+    font-size: 24px;
+    font-weight: 500;
+  }
+
+  .btn-iniciarQuiz {
+    width: 125.466px;
+    padding: 6px;
+    border: none;
+    border-radius: 11px;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.4);
+    background: #ecddc9;
+
+    color: #c79f61;
+    text-align: center;
+    font-family: DynaPuff;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+
+    cursor: pointer;
+    transition: all 0.3s;
+  }
+
+  .btn-iniciarQuiz:hover {
+    transition: all 0.3s;
+    background: #fdf4e9;
+    color: #d1c1a8;
+  }
+}
