@@ -7,7 +7,7 @@ function cadastrar() {
   var confirmacaoSenhaVar = ipt_confirmarSenha.value;
   var ehSurfista = ipt_surfista.value;
 
-  listaDeSurfistas.push(respostaUsuario); // adicionando as respostas do select na lista
+  listaDeSurfistas.push(ehSurfista); // adicionando as respostas do select na lista
 
   let totalSurfistas = 0;
   let totalNaoSurfistas = 0;
@@ -22,7 +22,7 @@ function cadastrar() {
 
   }
 
-  var valido = ehValido(nomeVar, emailVar, senhaVar, confirmacaoSenhaVar);
+  var valido = ehValido(nomeVar, emailVar, senhaVar, confirmacaoSenhaVar, ehSurfista);
 
   if (!valido) {
     return;
@@ -65,7 +65,7 @@ function cadastrar() {
   return false;
 }
 
-function ehValido(nomeVar, emailVar, senhaVar, confirmacaoSenhaVar) {
+function ehValido(nomeVar, emailVar, senhaVar, confirmacaoSenhaVar, ehSurfista) {
   mensagem_cadastro.innerHTML = "";
 
   // Verificando se há algum campo em branco
