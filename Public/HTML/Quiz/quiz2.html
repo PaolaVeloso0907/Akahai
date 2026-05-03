@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=DynaPuff:wght@400;500;600&family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&family=Caveat:wght@400;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../../CSS/quiz/quiz2.css">
+    <link rel="icon" href="../Assets/Img/icons/Akahai-ico.svg">
+
+    <script src="../../JS/quiz.js"></script>
+
+    <title>Akahai | Quiz</title>
+</head>
+
+<body>
+    <main id="jogo">
+        <img src="../../Assets/Img/jogo/fundo-jogo.png" class="img-fundo">
+
+        <div class="perguntaAtual" id="perguntaDaQuestaoAtual">
+            <span id="QuestaoExibida" class="questao-exibida"></span>
+        </div>
+
+        <div id="opcoes" class="container-opcoes"> 
+            <span class="container-opcao-img">
+                <input type="radio" id="primeiraOpcao" name="option" class="radio-oculto" value="alternativaA" />
+                <label for="primeiraOpcao" class="label-imagem" id="labelOpcaoUm"></label>
+            </span>
+
+            <span class="container-opcao-img">
+                <input type="radio" id="segundaOpcao" name="option" class="radio-oculto" value="alternativaB" />
+                <label for="segundaOpcao" class="label-imagem" id="labelOpcaoDois"></label>
+            </span>
+
+            <span class="container-opcao-img">
+                <input type="radio" id="terceiraOpcao" name="option" class="radio-oculto" value="alternativaC" />
+                <label for="terceiraOpcao" class="label-imagem" id="labelOpcaoTres"></label>
+            </span>
+
+            <span class="container-opcao-img">
+                <input type="radio" id="quartaOpcao" name="option" class="radio-oculto" value="alternativaD" />
+                <label for="quartaOpcao" class="label-imagem" id="labelOpcaoQuatro"></label>
+            </span>
+        </div>
+
+        <div id="botoes" class="btn-prx-voltar">
+            <button onclick="proximo()" id="btnProximo">PRÓXIMO</button>
+            <button onclick="voltar()" id="btnVoltar">VOLTAR</button>
+        </div>
+    </main>
+</body>
+
+</html>
+
