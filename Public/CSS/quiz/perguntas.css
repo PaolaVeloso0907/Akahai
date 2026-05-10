@@ -1,0 +1,89 @@
+/* Configurações básicas */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+}
+
+main {
+  width: 100%;
+  height: 100vh;
+
+  background-color: #efe1ce;
+  background-image: url("../../Assets/Img/jogo/fundo-quiz.png");
+  background-size: cover;
+  background-position: center;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container-main {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  width: 1040px;
+  height: 674px;
+
+  border-radius: 51px;
+  background-color: #fff6ea;
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+  padding: 40px;
+  text-align: center;
+}
+
+.pergunta-titulo {
+  color: #c79f61;
+  text-align: center;
+  font-family: DynaPuff;
+  font-size: 28px;
+  font-weight: 500;
+}
+
+.alternativas {
+  display: flex;
+  flex-direction: row;
+  gap: 25px;
+  justify-content: center;
+  align-items: center;
+}
+
+.alternativa-selecao {
+  border: none;
+  background-color: #fff6ea;
+  cursor: pointer;
+}
+
+.btn-voltar-prx {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 23px 10px 0px 10px;
+}
+
+.btn-proximo,
+.btn-voltar {
+  color: #fff3e0;
+  text-align: center;
+  font-family: DynaPuff;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+
+  border-radius: 15px;
+  background: #c79f61;
+  border: none;
+  padding: 10px;
+
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.btn-proximo:hover,
+.btn-voltar:hover {
+    transition: all 0.3s;
+    background-color: #efd1a3;
+  }
