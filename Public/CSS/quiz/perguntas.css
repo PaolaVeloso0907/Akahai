@@ -48,6 +48,10 @@ main {
   gap: 25px;
   justify-content: center;
   align-items: center;
+
+  &:focus{
+    background-color: red;
+  }
 }
 
 .alternativa-selecao {
@@ -84,6 +88,39 @@ main {
 
 .btn-proximo:hover,
 .btn-voltar:hover {
-    transition: all 0.3s;
-    background-color: #efd1a3;
+  transition: all 0.3s;
+  background-color: #efd1a3;
+}
+
+.pop-up-respostas {
+  position: absolute;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.596);
+}
+
+.pop-up-flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.feedback {
+  border-radius: 2rem;
+  background-color: #efd1a3;
+  color: #c79f61;
+  padding: 2rem;
+
+  p {
+    font-family: dynapuff;
+    font-size: 30px;
   }
+
+}
+
+.display-none {
+  display: none;
+}

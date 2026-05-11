@@ -9,7 +9,7 @@
     <link
         href="https://fonts.googleapis.com/css2?family=DynaPuff:wght@400;500;600&family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&family=Caveat:wght@400;700&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="../../CSS/quiz/quiz.css">
+    <link rel="stylesheet" href="../../CSS/quiz/resultado.css">
     <link rel="icon" href="../Assets/Img/icons/Akahai-ico.svg">
 
     <script src="../../JS/quiz.js"></script>
@@ -17,21 +17,35 @@
     <title>Akahai | Quiz</title>
 </head>
 
-<body>
-
+<body onload="verResultado()">
     <main>
-        
-
         <div class="container-video">
+            <audio id="musicaFundo" autoplay loop>
+                <source src="../Assets/Audio/mac-de-marco.mp3" type="audio/mpeg">
+            </audio>
+
             <video class="main-video" autoplay loop>
                 <source src="../../Assets/Video/quiz.mp4" type="video/mp4">
             </video>
 
             <div class="container-unico">
-                <h1>Obrigada por participar do quiz!</h1>
-                <p id="resumoAcertosErros"></p>
+                <h1>FIM DA BATERIA!</h1>
 
-                <button class="btn-voltar" onclick="telaInicial()">TELA INICIAL</button>
+                <div class="placar-final">
+                    <div class="topicos-placar">
+                        <p>Total de perguntas: <b>5</b></p>
+                        <p>Total de acertos: <b><span id="spanAcertos"></span></b></p>
+                        <p>Total de erros: <b><span id="spanErros"></span></b></p>
+                    </div>
+
+                    <h2 id="mensagemFinal" class="msg-destaque"></h2>
+                </div>
+            
+
+                <div class="buttons">
+                    <button class="btn-jogarNovamente" onclick="jogarNovamente('p1.html')">JOGAR NOVAMENTE</button>
+                    <button class="btn-telaInicial" onclick="telaInicial('index.html')">TELA INICIAL</button>
+                </div>
             </div>
         </div>
 
@@ -40,4 +54,3 @@
 </body>
 
 </html>
-
