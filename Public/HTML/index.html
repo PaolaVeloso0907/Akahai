@@ -14,6 +14,8 @@
     <link rel="stylesheet" href="../JS/sessao.js">
     <link rel="icon" href="../Assets/Img/icons/Akahai-ico.svg">
 
+    <script src="../JS/index.js"></script>
+
     <title>Akahai | Página Inicial</title>
 
 </head>
@@ -65,27 +67,24 @@
 
         <div class="container-3">
             <div class="memorial-btns">
-                <button class="tab" onclick="exibirDuke()">DUKE KAHANAMOKU</button>
-                <button class="tab" onclick="exibirIsabel()">ISABEL LETHAM</button>
-                <button class="tab" onclick="exibirSilvana()">SILVANA LIMA</button>
+                <button class="tab" onclick="exibirHeroi(0)">DUKE KAHANAMOKU</button>
+                <button class="tab" onclick="exibirHeroi(1)">ISABEL LETHAM</button>
+                <button class="tab" onclick="exibirHeroi(2)">SILVANA LIMA</button>
             </div>
 
-            <div class="memorial-conteudo" id="duke">
-                <div class="memorial-esquerda">
+            <div class="memorial-conteudo">
+                <div class="memorial-esquerda" id="imgHeroi" >
                     <img src="../Assets/Img/memorial/Duke.png" alt="Duke Kahanamoku" class="foto-memorial">
                 </div>
 
                 <div class="memorial-direita">
-                    <h2>DUKE<br>KAHANAMOKU</h2>
-                    <p>
-                        foi um nadador olímpico havaiano e é amplamente reconhecido como o
-                        <strong>"pai do surfe moderno"</strong>. Nascido em Honolulu, destacou-se por sua habilidade
-                        no mar, conquistando cinco medalhas olímpicas (ouro e prata) entre 1912 e 1924, além de
-                        popularizar o surfe mundialmente, especialmente nos EUA e Austrália, agindo como um
-                        embaixador cultural do Havaí.
+                    <h2 id="nome-heroi">
+                        DUKE<br>KAHANAMOKU
+                    </h2>
+                    <p id="descricao-heroi">
+                        foi um nadador olímpico havaiano e é amplamente reconhecido como o <strong>"pai do surfe moderno"</strong>. Nascido em Honolulu, destacou-se por sua habilidade no mar, conquistando cinco medalhas olímpicas (ouro e prata) entre 1912 e 1924, além de popularizar o surfe mundialmente, especialmente nos EUA e Austrália, agindo como um embaixador cultural do Havaí.
                     </p>
-                    <a href="../HTML/memorial.html" class="ver-mais">VER MAIS →</a>
-                    <img class="logo-memorial" src="../Assets/Img/icons/logo-transparente.png" alt="">
+                    <a href="../HTML/memorial.html" class="ver-mais" id="verMais">VER MAIS →</a>
                 </div>
             </div>
         </div>
