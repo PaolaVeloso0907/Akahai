@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=DynaPuff:wght@400;500;600&family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&family=Caveat:wght@400;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../CSS/dashboard.css">
+    <link rel="icon" href="../../Assets/Img/icons/Akahai-ico.svg">
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <title>Akahai | Dashboard</title>
+</head>
+
+<body>
+    <header class="container-1">
+
+        <nav class="navbar">
+            <ul class="nav-lista">
+                <li><a href="../HTML/index.html">PÁGINA INICIAL</a></li>
+                <li><a href="../HTML/memorial.html">MEMORIAL</a></li>
+                <li class="nav-logo">
+                    <img src="../Assets/Img/icons/logo-transparente.png" alt="Logo Akahai">
+                </li>
+                <li><a href="../HTML/Quiz/quiz.html">QUIZ</a></li>
+                <li><a href="../HTML/sobre.html">SOBRE</a></li>
+                <li><button><a href="../HTML/login.html" class="btn-entrar">ENTRAR</a></li></button>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container-kpi">
+        <div class="kpi-porcento">
+            <p>JOGARAM O QUIZ ATÉ O FINAL</p>
+
+            <span>85%</span>
+        </div>
+
+        <div class="kpi-media">
+            <p>MÉDIA DE ACERTOS: <b>SURFISTA</b></p>
+
+            <span>8.0</span>
+        </div>
+
+        <div class="kpi-media">
+            <p>MÉDIA DE ACERTOS: <b>NÃO É SURFISTA</b></p>
+
+            <span>9.0</span>
+        </div>
+    </div>
+
+    <div class="container-graficos-main">
+        
+        <div class="polar">
+            <canvas id="graficoPolar"></canvas>
+        </div>
+
+        <div class="barra">
+            <canvas id="graficoBarras"></canvas>
+        </div>
+
+    </div>
+
+
+
+    </div>
+
+
+
+</body>
+
+</html>
+<script>
+    // ------------------------------------------------------------------------------------
+    // GRÁFICO POLAR 
+    const grfPolar = document.getElementById("graficoPolar");
+
+    new Chart(grfPolar, {
+        type: "polarArea",
+
+        data: {
+            labels: ["Questão 1", "Questão 2", "Questão 3", "Questão 4", "Questão 5"],
+
+            datasets: [
+                {
+                    label: "QUANTIDADE DE ACERTOS NO QUIZ",
+                    data: [10, 8, 7, 5, 10],
+                    backgroundColor: [
+                        "#C79F61",
+                        "#efe1ce"
+                    ],
+                },
+            ],
+        },
+        options: {
+            plugins: {
+
+                legend: {
+                    display: false
+                },
+
+                title: {
+                    display: true,
+                    text: 'TESTE TESTE TESTE',
+                    color: '#red',
+                    font: {
+                        size: 30
+                    }
+                }
+            },
+
+            scales: {
+                y: {
+                    beginAtZero: true,
+                },
+            },
+        },
+    });
+    // ------------------------------------------------------------------------------------
+    // GRÁFICO BARRAS
+    const grfBarra = document.getElementById("graficoBarras");
+
+    new Chart(grfBarra, {
+        type: "bar",
+
+        data: {
+            labels: ["Questão 1", "Questão 2", "Questão 3", "Questão 4", "Questão 5"],
+
+            datasets: [
+                {
+                    label: "QUANTIDADE DE ACERTOS NO QUIZ",
+                    data: [10, 8, 7, 5, 10],
+                    backgroundColor: [
+                        "#C79F61",
+                        "#efe1ce"
+                    ],
+                },
+            ],
+        },
+        options: {
+            plugins: {
+
+                legend: {
+                    display: false
+                },
+
+                title: {
+                    display: true,
+                    text: 'TESTE TESTE TESTE',
+                    color: '#red',
+                    font: {
+                        size: 30
+                    }
+                }
+            },
+
+            scales: {
+                y: {
+                    beginAtZero: true,
+                },
+            },
+        },
+    });
+</script>
