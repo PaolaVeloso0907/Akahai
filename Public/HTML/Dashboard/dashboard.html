@@ -10,11 +10,64 @@
         href="https://fonts.googleapis.com/css2?family=DynaPuff:wght@400;500;600&family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&family=Caveat:wght@400;700&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="../CSS/dashboard.css">
-     <link rel="icon" href="../Assets/Img/icons/Akahai-ico.svg">
+    <link rel="icon" href="../../Assets/Img/icons/Akahai-ico.svg">
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
     <title>Akahai | Dashboard</title>
 </head>
+
 <body>
-    
+    <header class="container-1">
+        <img class="nav-img" src="../Assets/Img/banner/banner.png">
+
+        <nav class="navbar">
+            <ul class="nav-lista">
+                <li><a href="../HTML/index.html">PÁGINA INICIAL</a></li>
+                <li><a href="../HTML/memorial.html">MEMORIAL</a></li>
+                <li class="nav-logo">
+                    <img src="../Assets/Img/icons/logo-transparente.png" alt="Logo Akahai">
+                </li>
+                <li><a href="../HTML/Quiz/quiz.html">QUIZ</a></li>
+                <li><a href="../HTML/sobre.html">SOBRE</a></li>
+                <li><button><a href="../HTML/login.html" class="btn-entrar">ENTRAR</a></li></button>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container-grafico">
+        <canvas id="graficoBarras"></canvas>
+    </div>
+
 </body>
+
 </html>
+<script>
+    const contexto = document.getElementById("graficoBarras");
+
+    new Chart(contexto, {
+        type: "bar",
+
+        data: {
+            labels: ["Questão 1", "Questão 2", "Questão 3", "Questão 4", "Questão 5"],
+
+            datasets: [
+                {
+                    label: "QUANTIDADE DE ACERTOS NO QUIZ",
+                    data: [10, 8, 7, 5, 10],
+                    backgroundColor: [
+                        "#C79F61",
+                        "#efe1ce"
+                    ],
+                },
+            ],
+        },
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true,
+                },
+            },
+        },
+    });
+</script>
