@@ -67,15 +67,3 @@ function jogarNovamente(riniciarJogo) {
   sessionStorage.clear();
   window.location.href = "../Quiz/" + riniciarJogo;
 }
-
-// Voltar para a tela inicial
-function telaInicial(voltarTelaInicial) {
-  window.location.href = "../" + voltarTelaInicial;
-}
-
-function exibirFeedback(mensagem) {
-  document.getElementById("mensagemFeedback").innerHTML = mensagem;
-  document.getElementById("popUpFeedback").classList.remove("display-none")
-
-  
-}

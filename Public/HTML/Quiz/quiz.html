@@ -20,12 +20,11 @@
 <body>
 
     <main>
-
         <div class="container-video">
             <audio id="musicaFundo" autoplay loop>
                 <source src="../Assets/Audio/mac-de-marco.mp3" type="audio/mpeg">
             </audio>
-            
+
             <video class="main-video" autoplay loop>
                 <source src="../../Assets/Video/quiz.mp4" type="video/mp4">
             </video>
@@ -33,14 +32,19 @@
             <header>
                 <nav class="navbar">
                     <ul class="nav-lista">
-                        <li><a href="../HTML/index.html">PÁGINA INICIAL</a></li>
-                        <li><a href="../HTML/memorial.html">MEMORIAL</a></li>
+                        <li><a href="../index.html">PÁGINA INICIAL</a></li>
+                        <li><a href="../memorial.html">MEMORIAL</a></li>
                         <li class="nav-logo">
-                            <img src="../Assets/Img/icons/logo-transparente.png" alt="Logo Akahai">
+                            <img src="../../Assets/Img/icons/logo-transparente.png" alt="Logo Akahai">
                         </li>
-                        <li><a href="../HTML/Quiz/quiz.html">QUIZ</a></li>
-                        <li><a href="../HTML/sobre.html">SOBRE</a></li>
-                        <li><button><a href="../HTML/login.html" class="btn-entrar">ENTRAR</a></li></button>
+                        <li><a href="../Quiz/quiz.html">QUIZ</a></li>
+                        <li><a href="../sobre.html">SOBRE</a></li>
+
+                        <li>
+                            <button>
+                                <a href="../HTML/login.html" class="btn-entrar">ENTRAR</a>
+                            </button>
+                        </li>
                     </ul>
                 </nav>
             </header>
@@ -54,7 +58,6 @@
                 <button class="btn-iniciarQuiz" onclick="iniciar()">INICIAR</button>
             </div>
         </div>
-
     </main>
 
 </body>

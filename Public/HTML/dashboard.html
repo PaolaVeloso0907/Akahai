@@ -18,8 +18,7 @@
 </head>
 
 <body>
-    <header class="container-1">
-
+    <header>
         <nav class="navbar">
             <ul class="nav-lista">
                 <li><a href="../HTML/index.html">PÁGINA INICIAL</a></li>
@@ -29,99 +28,90 @@
                 </li>
                 <li><a href="../HTML/Quiz/quiz.html">QUIZ</a></li>
                 <li><a href="../HTML/sobre.html">SOBRE</a></li>
-                <li><button><a href="../HTML/login.html" class="btn-entrar">ENTRAR</a></li></button>
+
+                <li>
+                    <button>
+                        <a href="../HTML/login.html" class="btn-entrar">ENTRAR</a>
+                    </button>
+                </li>
             </ul>
         </nav>
     </header>
 
-    <div class="container-kpi">
-        <div class="kpi-porcento">
-            <p>JOGARAM O QUIZ ATÉ O FINAL</p>
+    <main class="container-principal">
 
-            <span>85%</span>
+        <div class="titulo-principal">
+            <h1>Visão geral dos insights</h1>
+            <p>Dados consolidados da pesquisa geral do quiz</p>
         </div>
 
-        <div class="kpi-media">
-            <p>MÉDIA DE ACERTOS: <b>SURFISTA</b></p>
+        <div class="container-kpis">
+            <div class="kpi">
+                <p>MÉDIA DE ACERTOS: SURFISTAS</p>
+                <p>85%</p>
+            </div>
 
-            <span>8.0</span>
+            <div class="kpi">
+                <p>MÉDIA DE ACERTOS: NÃO-SURFISTAS</p>
+                <p>42%</p>
+            </div>
         </div>
 
-        <div class="kpi-media">
-            <p>MÉDIA DE ACERTOS: <b>NÃO É SURFISTA</b></p>
+        <div class="grafico-formatacao">
 
-            <span>9.0</span>
+            <h2 class="titulo-flutuante">Performance por questão</h2>
+
+            <div class="donut">
+                <div class="centro-pizza">
+                    <h3 class="numero-centro">10</h3>
+                    <p class="texto-centro">Total</p>
+                </div>
+
+                <canvas id="graficoDonut"></canvas>
+            </div>
+
+            <div class="barra">
+                <canvas id="graficoBarras"></canvas>
+            </div>
+
         </div>
-    </div>
 
-    <div class="container-graficos-main">
-        
-        <div class="polar">
-            <canvas id="graficoPolar"></canvas>
+        <div class="irMemorial">
+            <p>Na hora de surfar: Qual a prancha ideal?</p>
+            <p>It is a long established fact that a reader will be distracted by the readable content of a page when
+                looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution
+                of letters, as opposed to using 'Content here, content here', making it look like readable English. Many
+                desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a
+                search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have
+                evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).</p>
+
+            <button onclick="irMemorial()">Saber mais</button>
         </div>
+    </main>
 
-        <div class="barra">
-            <canvas id="graficoBarras"></canvas>
+
+
+
+    <footer class="rodape">
+        <img src="../Assets/Img/icons/logo-transparente.png" alt="Akahai" class="logo-rodape">
+
+        <div class="content-footer">
+            <div class="social-icons">
+                <a href="https://www.instagram.com/oh.hey.lola/" class="btn-social"><img
+                        src="../Assets/Img/icons/instagram.svg" alt="Instagram"></a>
+                <a href="https://www.linkedin.com/in/paola-veloso-86a0552aa/" class="btn-social"><img
+                        src="../Assets/Img/icons/linkedin.svg" alt="LinkedIn"></a>
+                <a href="https://github.com/PaolaVeloso0907" class="btn-social"><img
+                        src="../Assets/Img/icons/github.svg" alt="GitHub">\</a>
+            </div>
+            <p class="creditos">made with ♥ by @PaolaVeloso0907</p>
         </div>
-
-    </div>
-
-
-
-    </div>
-
-
+    </footer>
 
 </body>
 
 </html>
 <script>
-    // ------------------------------------------------------------------------------------
-    // GRÁFICO POLAR 
-    const grfPolar = document.getElementById("graficoPolar");
-
-    new Chart(grfPolar, {
-        type: "polarArea",
-
-        data: {
-            labels: ["Questão 1", "Questão 2", "Questão 3", "Questão 4", "Questão 5"],
-
-            datasets: [
-                {
-                    label: "QUANTIDADE DE ACERTOS NO QUIZ",
-                    data: [10, 8, 7, 5, 10],
-                    backgroundColor: [
-                        "#C79F61",
-                        "#efe1ce"
-                    ],
-                },
-            ],
-        },
-        options: {
-            plugins: {
-
-                legend: {
-                    display: false
-                },
-
-                title: {
-                    display: true,
-                    text: 'TESTE TESTE TESTE',
-                    color: '#red',
-                    font: {
-                        size: 30
-                    }
-                }
-            },
-
-            scales: {
-                y: {
-                    beginAtZero: true,
-                },
-            },
-        },
-    });
-    // ------------------------------------------------------------------------------------
     // GRÁFICO BARRAS
     const grfBarra = document.getElementById("graficoBarras");
 
@@ -133,37 +123,84 @@
 
             datasets: [
                 {
-                    label: "QUANTIDADE DE ACERTOS NO QUIZ",
-                    data: [10, 8, 7, 5, 10],
-                    backgroundColor: [
-                        "#C79F61",
-                        "#efe1ce"
-                    ],
+                    // Barra 1
+                    label: "Surfistas",
+                    data: [45, 42, 38, 40, 44],
+                    backgroundColor: "#496173",
+                    borderRadius: 10,
+                },
+                {
+                    // Barra 2
+                    label: "Não Surfistas",
+                    data: [30, 15, 8, 12, 5],
+                    backgroundColor: "#C79F61",
+                    borderRadius: 10,
                 },
             ],
         },
         options: {
+            responsive: true,
             plugins: {
-
                 legend: {
-                    display: false
-                },
-
-                title: {
                     display: true,
-                    text: 'TESTE TESTE TESTE',
-                    color: '#red',
-                    font: {
-                        size: 30
-                    }
+                    align: 'center',
+                    position: 'top',
+                    labels: {
+                        color: '#000',
+                        font: { family: 'Montserrat', weight: '600' },
+                        usePointStyle: true,
+                        pointStyle: 'circle'
+                    },
+                },
+                title: {
+                    display: false,
                 }
             },
-
             scales: {
                 y: {
                     beginAtZero: true,
+                    grid: { color: 'rgba(199, 159, 97, 0.2)' }
                 },
+                x: {
+                    grid: { display: true }
+                }
             },
         },
     });
+    //-----------------------------------------------------------------------
+    // GRÁFICO DONUT
+    const grfDonut = document.getElementById("graficoDonut");
+
+new Chart(grfDonut, {
+    type: "doughnut", // O tipo muda de 'bar' para 'doughnut'
+    data: {
+        labels: ["Finalizaram", "Desistiram"],
+        datasets: [{
+            // De 10 usuários fictícios, vamos fingir que 8 terminaram e 2 saíram na metade
+            data: [8, 2], 
+            
+            // As cores inspiradas na sua imagem de referência!
+            backgroundColor: ["#C79F61", "#4A5C6A"], 
+            
+            // Remove as bordas brancas para o design ficar mais limpo
+            borderWidth: 0 
+        }]
+    },
+    options: {
+        // A MÁGICA DA ESPESSURA DA ROSCA:
+        cutout: '80%', // 80% do gráfico será buraco. Quanto maior a %, mais fina é a linha!
+        
+        plugins: {
+            legend: {
+                position: 'bottom', // Joga a legenda para baixo
+                labels: {
+                    usePointStyle: true, // As nossas bolinhas maravilhosas
+                    pointStyle: 'circle',
+                    font: { family: 'Montserrat', weight: '600' },
+                    padding: 20 // Dá um espacinho entre a rosca e a legenda
+                }
+            }
+        }
+    }
+});
 </script>
