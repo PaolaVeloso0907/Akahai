@@ -54,6 +54,12 @@ main {
     font-size: 20px;
     font-style: normal;
     font-weight: 500;
+    transition: all 0.3s;
+    cursor: pointer;
+  }
+
+  .btn-cadastar:hover {
+    opacity: 0.7;
   }
 }
 
@@ -127,9 +133,13 @@ main {
     text-align: center;
     font-family: Montserrat;
     font-size: 16px;
-    font-style: normal;
     font-weight: 500;
-    line-height: normal;
+    transition: all 0.3s;
+    cursor: pointer;
+  }
+
+  .btn-entrar:hover {
+    opacity: 0.5;
   }
 
   small,

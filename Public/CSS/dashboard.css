@@ -16,52 +16,28 @@ header {
   width: 100%;
   display: flex;
   justify-content: center;
-  padding-top: 40px;
-  margin-bottom: 50px;
-}
-
-/* Container Navbar */
-.container-1 {
-  position: relative;
-  height: 960px;
-  width: 100%;
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-}
-
-.nav-img {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  z-index: -1;
 }
 
 .navbar {
-  width: 70%;
+  width: 100%;
   height: 65px;
-  max-width: 1000px;
-  box-sizing: border-box;
-  background-color: #f8e6cbb5;
+  background-color: #f8e6cb;
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.1);
-  border-radius: 17px;
-  padding: 30px;
+  border-radius: 10px;
+  padding: 0 30px; 
+  box-sizing: border-box; 
+  
   display: flex;
-  align-items: center;
-  margin: 0 auto;
+  align-items: center; 
+  justify-content: space-between; 
 }
 
 .nav-lista {
   list-style: none;
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  width: 100%;
-  padding: 0;
-  margin: 0;
+  gap: 2.3rem;
+  margin-right: 3rem;
 }
 
 .nav-lista a {
@@ -74,29 +50,13 @@ header {
 }
 
 .nav-lista a:hover {
-  opacity: 0.8;
+  opacity: 0.5;
 }
 
-.nav-logo img {
-  width: 50px;
-  height: 50px;
-  object-fit: contain;
-  display: block;
-}
-
-.nav-lista button {
-  background-color: #c79f61;
-  border: none;
-  border-radius: 10px;
-  padding: 6px 16px;
-  cursor: pointer;
-}
-
-.btn-entrar {
-  color: #efe1ce !important;
-  font-weight: 500;
-  font-size: 12px;
-  text-decoration: none;
+.nav-logo {
+  width: 63px;
+  height: 63px;
+  margin-left: 1.8rem;
 }
 
 /* MAIN */
@@ -104,7 +64,10 @@ header {
   display: flex;
   flex-direction: column;
   width: 100%;
-  padding: 1rem 5rem 4rem 5rem;
+  padding-right: 5rem;
+  padding-left: 5rem;
+  margin-top: 5rem;
+  margin-bottom: 5rem;
   gap: 2rem;
 
   .titulo-principal {
@@ -116,7 +79,8 @@ header {
 
     h1 {
       font-family: "DynaPuff";
-      color: #6e5c47;
+      color: #536267;
+      font-size: 27px;
     }
 
     p {
@@ -132,19 +96,20 @@ header {
     .kpi {
       background-color: #fffbf7;
       border-radius: 1rem;
-      width: 40rem;
+      width: 32rem;
       height: 11rem;
       padding: 2rem;
 
       h2 {
         font-size: small;
         margin-bottom: 1.6rem;
+        color: #536267;
       }
 
       p {
         font-size: 60px;
         font-weight: 600;
-        color: #c79f61;
+        color: #846e55;;
       }
     }
   }
@@ -154,12 +119,13 @@ header {
   flex-direction: row;
   position: relative;
   width: 100%;
-  padding-top: 20px;
+  padding-top: 2px;
+  gap: 2rem;
 
   .barra {
     background-color: #fffbf7;
     border-radius: 1rem;
-    width: 45rem;
+    width: 47rem;
     height: 28rem;
     padding: 3rem;
 
@@ -218,32 +184,35 @@ header {
   gap: 1rem;
   background-color:#efe1cec7;
   border-radius: 1rem;
-  padding: 1rem;
+  padding: 2rem;
+  margin-top: 2rem;
 
   h2 {
-    color: #5b4c3b;
+    color: #536267;
     font-family: "DynaPuff";
   }
   
   p {
-    color: #846e55;
+    color: #5d6e73;
     font-family: 'Montserrat';
   }
 
   .btn-memorial {
     border: none;
     border-radius: .7rem;
-    background-color: rgba(140, 110, 64, 0.783);
+    background-color: #596e75;
     color: #fff4e6;
     width: 7rem;
     height: 2rem;
+    font-family: 'Montserrat';
+    font-weight: 500;
 
     cursor: pointer;
     transition: all 0.3s;
   }
 
   .btn-memorial:hover {
-    background-color: #c1ae91;
+    background-color: #879ea5;
   }
 }
 

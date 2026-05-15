@@ -108,11 +108,10 @@ body {
     font-family: "DynaPuff";
     font-size: 70px;
     font-weight: 600;
-    color: #8faab4;
+    color: #536267;
     line-height: 1.2;
     margin-top: 70px;
     margin-bottom: 40px;
-    text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
     letter-spacing: 6px;
   }
 
@@ -122,7 +121,6 @@ body {
     line-height: 1.7;
     color: #536267;
     margin-bottom: 20px;
-    text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
   }
 
   strong {
@@ -134,7 +132,6 @@ body {
     font-weight: 600;
     font-size: 16px;
     color: #949a9d;
-    text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
     transition: color 0.3s;
   }
 
@@ -239,7 +236,6 @@ body {
     font-weight: 500;
     color: #efe1ce;
     line-height: 1.7;
-    text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
     max-width: 658px;
   }
 
@@ -255,7 +251,6 @@ body {
     text-decoration: none;
     margin-top: 25px;
     display: inline-block;
-    text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
     cursor: pointer;
     transition: color 0.3s;
   }
