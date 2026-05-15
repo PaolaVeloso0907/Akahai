@@ -47,37 +47,36 @@
 
         <div class="container-kpis">
             <div class="kpi">
-                <p>MÉDIA DE ACERTOS: SURFISTAS</p>
+                <h2>MÉDIA DE ACERTOS: SURFISTAS</h2>
                 <p>85%</p>
             </div>
 
             <div class="kpi">
-                <p>MÉDIA DE ACERTOS: NÃO-SURFISTAS</p>
+                <h2>MÉDIA DE ACERTOS: NÃO-SURFISTAS</h2>
                 <p>42%</p>
             </div>
         </div>
 
         <div class="grafico-formatacao">
 
-            <h2 class="titulo-flutuante">Performance por questão</h2>
+            <div class="barra">
+                <h2 class="titulo-flutuante">Surfistas vs. Haoles: Quem Sabe Mais?</h2>
+
+                <canvas id="graficoBarras"></canvas>
+            </div>
 
             <div class="donut">
-                <div class="centro-pizza">
+                <div class="centro-rosca">
                     <h3 class="numero-centro">10</h3>
                     <p class="texto-centro">Total</p>
                 </div>
 
                 <canvas id="graficoDonut"></canvas>
             </div>
-
-            <div class="barra">
-                <canvas id="graficoBarras"></canvas>
-            </div>
-
         </div>
 
         <div class="irMemorial">
-            <p>Na hora de surfar: Qual a prancha ideal?</p>
+            <h2>Na hora de surfar: Qual a prancha ideal?</h2>
             <p>It is a long established fact that a reader will be distracted by the readable content of a page when
                 looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution
                 of letters, as opposed to using 'Content here, content here', making it look like readable English. Many
@@ -85,7 +84,7 @@
                 search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have
                 evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).</p>
 
-            <button onclick="irMemorial()">Saber mais</button>
+            <button class="btn-memorial" onclick="irMemorial()">Saber mais</button>
         </div>
     </main>
 
@@ -143,7 +142,7 @@
             plugins: {
                 legend: {
                     display: true,
-                    align: 'center',
+                    align: 'end',
                     position: 'top',
                     labels: {
                         color: '#000',
@@ -171,36 +170,50 @@
     // GRÁFICO DONUT
     const grfDonut = document.getElementById("graficoDonut");
 
-new Chart(grfDonut, {
-    type: "doughnut", // O tipo muda de 'bar' para 'doughnut'
-    data: {
-        labels: ["Finalizaram", "Desistiram"],
-        datasets: [{
-            // De 10 usuários fictícios, vamos fingir que 8 terminaram e 2 saíram na metade
-            data: [8, 2], 
-            
-            // As cores inspiradas na sua imagem de referência!
-            backgroundColor: ["#C79F61", "#4A5C6A"], 
-            
-            // Remove as bordas brancas para o design ficar mais limpo
-            borderWidth: 0 
-        }]
-    },
-    options: {
-        // A MÁGICA DA ESPESSURA DA ROSCA:
-        cutout: '80%', // 80% do gráfico será buraco. Quanto maior a %, mais fina é a linha!
-        
-        plugins: {
-            legend: {
-                position: 'bottom', // Joga a legenda para baixo
-                labels: {
-                    usePointStyle: true, // As nossas bolinhas maravilhosas
-                    pointStyle: 'circle',
-                    font: { family: 'Montserrat', weight: '600' },
-                    padding: 20 // Dá um espacinho entre a rosca e a legenda
+    new Chart(grfDonut, {
+        type: "doughnut",
+        data: {
+            labels: ["Finalizaram", "Desistiram"],
+            datasets: [{
+                data: [8, 2],
+                backgroundColor: ["#C79F61", "#496173"],
+                borderWidth: 0
+            }]
+        },
+        options: {
+            cutout: '80%',
+            responsive: true,
+            maintainAspectRatio: false,
+
+            plugins: {
+                title: {
+                    display: true,
+                    position: 'top',
+                    align: 'start', 
+                    text: 'Sobreviventes do lineup', 
+                    color: '#4A5C6A', 
+                    font: {
+                        family: 'Montserrat',
+                        size: 18,
+                        weight: 'bold'
+                    },
+                    padding: { bottom: 5 } 
+                },
+                legend: {
+                    position: 'bottom',
+                    plugins: {
+                        legend: {
+                            position: 'bottom',
+                            labels: {
+                                usePointStyle: true,
+                                pointStyle: 'circle',
+                                font: { family: 'Montserrat', weight: '600' },
+                                padding: 20
+                            }
+                        }
+                    }
                 }
             }
-        }
-    }
-});
+        },
+    });
 </script>

@@ -8,8 +8,8 @@
 
 body {
   font-family: "Montserrat";
-  background-color: #efe1ce;
-  color: #536267;
+  background-color: #ffeed9;
+  color: #496173;
 }
 
 /* Container Navbar */
@@ -323,7 +323,7 @@ body {
 
 /* Rodapé */
 .rodape {
-  background-color: #e6e1c0;
+  background-color: #ebdcc5;
   height: 167px;
   display: flex;
   align-items: center;
