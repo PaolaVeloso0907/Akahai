@@ -41,13 +41,15 @@
 
         <div class="container-kpis">
             <div class="kpi">
-                <h2>MÉDIA DE ACERTOS: SURFISTAS</h2>
-                <p>85%</p>
+                <h2>SURFISTAS DE ALMA</h2>
+                <p>42 USUÁRIOS</p>
+                <span>Acertaram todas as 5 questões</span>
             </div>
 
             <div class="kpi">
-                <h2>MÉDIA DE ACERTOS: NÃO-SURFISTAS</h2>
-                <p>42%</p>
+                <h2>O MAIOR CALDO</h2>
+                <p>QUESTÃO 3</p>
+                <span>78% de erro</span>
             </div>
         </div>
 
@@ -60,6 +62,8 @@
             </div>
 
             <div class="donut">
+                <h2 class="titulo-flutuante2"></h2>
+
                 <div class="centro-rosca">
                     <h3 class="numero-centro">10</h3>
                     <p class="texto-centro">Total</p>
@@ -119,7 +123,7 @@
                 },
                 {
                     // Barra 2
-                    label: "Não Surfistas",
+                    label: "Haoles",
                     data: [30, 15, 8, 12, 5],
                     backgroundColor: "#C79F61",
                     borderRadius: 10,
@@ -162,7 +166,7 @@
     new Chart(grfDonut, {
         type: "doughnut",
         data: {
-            labels: ["Finalizaram", "Desistiram"],
+            labels: ["Surfistas", "Haoles"],
             datasets: [{
                 data: [8, 2],
                 backgroundColor: ["#C79F61", "#536267"],
@@ -176,17 +180,7 @@
 
             plugins: {
                 title: {
-                    display: true,
-                    position: 'top',
-                    align: 'start',
-                    text: 'Sobreviventes do lineup',
-                    color: '#4A5C6A',
-                    font: {
-                        family: 'Montserrat',
-                        size: 18,
-                        weight: 'bold'
-                    },
-                    padding: { bottom: 5 }
+                    display: false
                 },
                 legend: {
                     position: 'bottom',
@@ -196,8 +190,7 @@
                             labels: {
                                 usePointStyle: true,
                                 pointStyle: 'circle',
-                                font: { family: 'Montserrat', weight: '600' },
-                                padding: 20
+                                font: { family: 'Montserrat', weight: '600' }
                             }
                         }
                     }

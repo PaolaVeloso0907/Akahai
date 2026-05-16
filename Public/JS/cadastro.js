@@ -5,9 +5,9 @@ function cadastrar() {
   var emailVar = ipt_email.value;
   var senhaVar = ipt_senha.value;
   var confirmacaoSenhaVar = ipt_confirmarSenha.value;
-  var ehSurfista = ipt_surfista.value;
+  var ehSurfistaVar = ipt_surfista.value;
 
-  listaDeSurfistas.push(ehSurfista); // adicionando as respostas do select na lista
+  listaDeSurfistas.push(ehSurfistaVar); // adicionando as respostas do select na lista
 
   let totalSurfistas = 0;
   let totalNaoSurfistas = 0;
@@ -22,7 +22,7 @@ function cadastrar() {
 
   }
 
-  var valido = ehValido(nomeVar, emailVar, senhaVar, confirmacaoSenhaVar, ehSurfista);
+  var valido = ehValido(nomeVar, emailVar, senhaVar, confirmacaoSenhaVar, ehSurfistaVar);
 
   if (!valido) {
     return;
@@ -40,6 +40,7 @@ function cadastrar() {
       nomeServer: nomeVar,
       emailServer: emailVar,
       senhaServer: senhaVar,
+      ehSurfistaServer: ehSurfistaVar,
     }),
   })
     .then(function (resposta) {

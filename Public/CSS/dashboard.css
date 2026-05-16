@@ -94,22 +94,30 @@ header {
     gap: 2rem;
 
     .kpi {
+      display: flex;
+      flex-direction: column;
       background-color: #fffbf7;
       border-radius: 1rem;
-      width: 32rem;
-      height: 11rem;
+      width: 45rem;
+      height: 12rem;
       padding: 2rem;
+      gap: 1rem;
 
       h2 {
         font-size: small;
-        margin-bottom: 1.6rem;
         color: #536267;
       }
 
       p {
-        font-size: 60px;
+        font-size: 50px;
         font-weight: 600;
-        color: #846e55;;
+        color: #846e55;
+        text-align: center;
+      }
+      
+      span {
+        font-size: small;
+        text-align: center;
       }
     }
   }
@@ -125,14 +133,14 @@ header {
   .barra {
     background-color: #fffbf7;
     border-radius: 1rem;
-    width: 47rem;
-    height: 28rem;
+    width: 63rem;
+    height: 35rem;
     padding: 3rem;
 
     .titulo-flutuante {
       position: absolute;
-      top: 50px;
-      left: 50px;
+      top: 27px;
+      left: 30px;
 
       color: #2d4253;
       font-family: "Montserrat";
@@ -145,19 +153,30 @@ header {
   .donut {
     background-color: #fffbf7;
     border-radius: 1rem;
-    width: 18rem;
-    height: 28rem;
+    width: 20rem;
+    height: 35rem;
     padding: 0.7rem 2rem 1rem 2rem;
 
     position: relative;
-    margin: 0 auto;
     display: flex;
     align-items: center;
     justify-content: center;
 
+    .titulo-flutuante2 {
+      position: absolute;
+      top: 30px;
+      left: 25px;
+
+      color: #2d4253;
+      font-family: "Montserrat";
+      font-size: 20px;
+      font-weight: 700;
+      z-index: 10;
+    }
+
     .centro-rosca {
       position: absolute;
-      top: 43%;
+      top: 46%;
       left: 50%;
       transform: translate(-50%, -50%);
       text-align: center;
