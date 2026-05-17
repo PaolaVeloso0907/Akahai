@@ -109,6 +109,7 @@ header {
   justify-content: center;
 }
 
+/* CONTEÚDO PRINCIPAL */
 .main-video {
   position: absolute;
   width: 100%;
@@ -129,7 +130,7 @@ header {
   text-align: center;
 
   h1 {
-    color: #ecddc9;
+    color: #d7bc98;
     text-align: center;
     text-shadow: 0 8px 8px rgba(0, 0, 0, 0.4);
     font-family: DynaPuff;
@@ -138,7 +139,7 @@ header {
   }
 
   p {
-    color: #ecddc9;
+    color: #d7bc98;
     text-align: center;
     text-shadow: 0 4px 4px rgba(0, 0, 0, 0.4);
     font-family: Montserrat;
@@ -167,8 +168,6 @@ header {
   }
 
   .btn-iniciarQuiz:hover {
-    transition: all 0.3s;
-    background: #fdf4e9;
-    color: #d1c1a8;
+    opacity: 0.5;
   }
 }
