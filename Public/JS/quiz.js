@@ -1,13 +1,17 @@
 // Função para iniciar o jogo
 function iniciar() {
-  if (sessionStorage.ID_USUARIO != undefined && sessionStorage.ID_USUARIO != null) {
+  if (
+    sessionStorage.ID_USUARIO != undefined &&
+    sessionStorage.ID_USUARIO != null
+  ) {
     window.location.href = "../Quiz/p1.html";
   } else {
-    alert("Opa, tomou um caldo! Você precisa fazer login antes de dropar essa onda e iniciar o quiz.");
+    alert(
+      "Opa, tomou um caldo! Você precisa fazer login antes de dropar essa onda e iniciar o quiz.",
+    );
     window.location.href = "../login.html";
   }
 }
-
 
 let alternativaSelecionada = 0;
 
@@ -83,51 +87,50 @@ function verResultado() {
   }
   document.getElementById("mensagemFinal").innerHTML = mensagem;
 
-  let idUsuario = sessionStorage.ID_USUARIO;
-
-  let acertouQ1 = Number(sessionStorage.getItem("acertouQ1")) || 0;
-  let acertouQ2 = Number(sessionStorage.getItem("acertouQ2")) || 0;
-  let acertouQ3 = Number(sessionStorage.getItem("acertouQ3")) || 0;
-  let acertouQ4 = Number(sessionStorage.getItem("acertouQ4")) || 0;
-  let acertouQ5 = Number(sessionStorage.getItem("acertouQ5")) || 0;
-
-  fetch("/usuarios/salvarResultado", {
-    method: "POST",
+  fetch("/usuarios/gravar-quiz", {
+    method: "POST", // post -> quando a egnte enviar 'body'
     headers: {
       "Content-Type": "application/json",
     },
     body: JSON.stringify({
-      idUsuarioServer: idUsuario,
-      pontuacaoServer: totalAcertos,
-      q1Server: acertouQ1,
-      q2Server: acertouQ2,
-      q3Server: acertouQ3,
-      q4Server: acertouQ4,
-      q5Server: acertouQ5,
+      pontuacao: totalAcertos,
+      idUsuario: sessionStorage.ID_USUARIO,
+      q1: sessionStorage.acertouQ1,
+      q2: sessionStorage.acertouQ2,
+      q3: sessionStorage.acertouQ3,
+      q4: sessionStorage.acertouQ4,
+      q5: sessionStorage.acertouQ5,
     }),
   })
     .then(function (resposta) {
+      console.log("ESTOU NO THEN DO entrar()!");
+
       if (resposta.ok) {
-        console.log("Respostas salvas com sucesso no banco!");
+        console.log(resposta);
       } else {
-        console.log("Erro ao salvar respostas.");
+        alert("Ocorreu um erro e os resultados não foram armazenados!");
       }
-    })
+    }) // essa função é executada caso haja erros na comunicação com o backend
     .catch(function (erro) {
-      console.log("Erro no fetch: ", erro);
+      console.log(erro);
     });
 }
 
 // Reinicia o jogo
 function jogarNovamente(riniciarJogo) {
+  limparRespostas()
+
+  window.location.href = "../Quiz/" + riniciarJogo;
+}
+
+function limparRespostas() {
+  // Limpa os dados do jogo anterior
   sessionStorage.removeItem("pontosDoUser");
   sessionStorage.removeItem("acertouQ1");
   sessionStorage.removeItem("acertouQ2");
   sessionStorage.removeItem("acertouQ3");
   sessionStorage.removeItem("acertouQ4");
   sessionStorage.removeItem("acertouQ5");
-
-  window.location.href = "../Quiz/" + riniciarJogo;
 }
 
 function telaInicial(irTelaInicial) {

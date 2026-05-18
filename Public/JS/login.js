@@ -13,20 +13,19 @@ function entrar() {
   console.log("FORM SENHA: ", senhaVar);
 
   // envia os dados do login para o backend para verificar se o email e senha estão corretos
-  fetch("/usuarios/autenticar", { // rota do backend para autenticar o usuário
-    method: "POST", // método de envio dos dados, nesse caso, POST, pois estamos enviando dados para o backend
-    headers: { // cabeçalho da requisição, indicando que o conteúdo é do tipo JSON
+  fetch("/usuarios/autenticar", { 
+    method: "POST", 
+    headers: { 
       "Content-Type": "application/json",
     },
-    body: JSON.stringify({ // corpo da requisição, convertendo os dados para JSON
-      emailServer: emailVar, // nome do campo esperado pelo backend, seguido do valor da variável que contém o email do usuário
+    body: JSON.stringify({ 
+      emailServer: emailVar, 
       senhaServer: senhaVar,
     }),
-  }) // se a requisição for bem-sucedida, ou seja, o backend retornar uma resposta, essa função é executada
-    .then(function (resposta) { // função para tratar a resposta do backend
+  }) 
+    .then(function (resposta) { 
       console.log("ESTOU NO THEN DO entrar()!");
 
-      // se a resposta do fetch for "ok", ou seja, o login foi bem-sucedido
       if (resposta.ok) {
         console.log(resposta);
 
@@ -35,14 +34,13 @@ function entrar() {
           console.log(JSON.stringify(json));
           sessionStorage.EMAIL_USUARIO = json.email;
           sessionStorage.NOME_USUARIO = json.nome;
-          sessionStorage.ID_USUARIO = json.idUsuario;
+          sessionStorage.ID_USUARIO = json.id;
 
-          setTimeout(function () { // aguarda 1 segundo para redirecionar o usuário para a dashboard, para exibir o loading
+          setTimeout(function () { 
             window.location = "../HTML/dashboard.html";
-          }, 1000); // apenas para exibir o loading
+          }, 1000); 
         });
 
-        // essa função é executada caso a resposta do fetch seja "ok" 
       } else {
         mensagem_login.innerHTML = "Usuário ou senha inválidos!";
 
@@ -59,7 +57,6 @@ function entrar() {
       console.log(erro);
     });
 
-  // retorna falso para evitar que a página seja recarregada
   return false;
 }
 

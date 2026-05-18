@@ -20,11 +20,11 @@ function autenticar(req, res) {
         console.log("Resultado encontrado");
         console.log(resultadoAutenticar);
         res.json({
-          id: resultadoAutenticar[0].id,
+          id: resultadoAutenticar[0].idUsuario,
           email: resultadoAutenticar[0].email,
           nome: resultadoAutenticar[0].nome,
           senha: resultadoAutenticar[0].senha,
-          ehSurfista: resultadoAutenticar[0].ehSurfista,
+          perfil: resultadoAutenticar[0].perfil,
         });
       } else if (resultadoAutenticar.length == 0) {
         res.status(403).send("Email e/ou senha inválido(s)");
@@ -48,7 +48,7 @@ function cadastrar(req, res) {
   var nome = req.body.nomeServer;
   var email = req.body.emailServer;
   var senha = req.body.senhaServer;
-  var ehSurfista = req.body.ehSurfistaServer;
+  var perfil = req.body.perfilServer;
 
   // Faça as validações dos valores
   if (nome == undefined) {
@@ -57,12 +57,12 @@ function cadastrar(req, res) {
     res.status(400).send("Seu email está undefined!");
   } else if (senha == undefined) {
     res.status(400).send("Sua senha está undefined!");
-  } else if (ehSurfista == undefined) {
+  } else if (perfil == undefined) {
     res.status(400).send("O campo da pergunta está undefined!");
   } else {
     // Passe os valores como parâmetro e vá para o arquivo usuarioModel.js
     usuarioModel
-      .cadastrar(nome, email, senha, ehSurfista)
+      .cadastrar(nome, email, senha, perfil)
       .then(function (resultado) {
         res.json(resultado);
       })
@@ -77,7 +77,69 @@ function cadastrar(req, res) {
   }
 }
 
+function gravarQuiz(req, res) {
+
+  console.log(req.body)
+
+  let pontuacao = req.body.pontuacao;
+  let idUsuario = req.body.idUsuario;
+  let q1 = req.body.q1;
+  let q2 = req.body.q2;
+  let q3 = req.body.q3;
+  let q4 = req.body.q4;
+  let q5 = req.body.q5;
+
+  if (idUsuario == undefined) {
+    res.status(400).send("Usuário inválido!");
+    return
+  }
+
+  usuarioModel
+  .gravarResultado(q1, q2, q3, q4, q5)
+  .then(function (resultado) {
+    let idResultado = resultado.insertId
+
+    usuarioModel
+    .gravarQuiz(pontuacao, idUsuario, idResultado)
+    .then(function (resultado) {
+      console.log(resultado);
+    })
+    .catch(function (erro) {
+      console.log(erro);
+      console.log("\nHouve um erro ao gravar o quiz! Erro: ", erro.sqlMessage,);
+      res.status(500).json(erro.sqlMessage);
+      return
+    });
+
+  })
+  .catch(function (erro) {
+    console.log(erro);
+    console.log("\nHouve um erro ao gravar o resultado! Erro: ", erro.sqlMessage,);
+    res.status(500).json(erro.sqlMessage);
+    return
+  });
+}
+
+function buscarQuiz(req, res) {
+  console.log(req.body)
+
+  usuarioModel
+  .buscarQuiz()
+  .then(function (resultado) {
+    res.json(resultado);
+  })
+  .catch(function (erro) {
+    console.log(erro);
+    console.log("\nHouve um erro ao buscar o quiz! Erro: ", erro.sqlMessage,);
+    res.status(500).json(erro.sqlMessage);
+    return
+  });
+
+}
+
 module.exports = {
   autenticar,
   cadastrar,
+  gravarQuiz,
+  buscarQuiz
 };
