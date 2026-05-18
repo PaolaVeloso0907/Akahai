@@ -6,10 +6,12 @@ function iniciar() {
   ) {
     window.location.href = "../Quiz/p1.html";
   } else {
-    alert(
+    mostrarPopUp(
       "Opa, tomou um caldo! Você precisa fazer login antes de dropar essa onda e iniciar o quiz.",
     );
-    window.location.href = "../login.html";
+    setTimeout(() => {
+      window.location.href = "../login.html";
+    }, 1000);
   }
 }
 
@@ -40,25 +42,25 @@ function alternativa(opcaoClicada) {
 
 function proximo(proximaPagina, numeroQuestao) {
   if (alternativaSelecionada === 0) {
-    alert("Opa! Selecione uma opção antes de remar para a próxima onda!");
+      mostrarPopUp("Opa! Selecione uma opção antes de remar para a próxima onda!");
+      setTimeout(() => { document.getElementById("meuPopUp").classList.add("escondido") }, 2000);
     return;
   }
 
   let pontosAtuais = Number(sessionStorage.getItem("pontosDoUser")) || 0;
 
   if (alternativaSelecionada === respostaCertaAtual) {
-    alert("Boa! Dropou na onda certa! Ganhou ponto.");
+    mostrarPopUp("Boa! Dropou na onda certa! Ganhou ponto.");
     pontosAtuais++;
-    // Salva 1 (acerto) para essa questão específica
-    sessionStorage.setItem("acertouQ" + numeroQuestao, 1);
+    sessionStorage.setItem("acertouQ" + numeroQuestao, 1); // Salva 1 (acerto) para essa questão específica
+
   } else {
-    alert("Ixi, tomou um caldo! Resposta errada.");
-    // Salva 0 (erro) para essa questão específica
-    sessionStorage.setItem("acertouQ" + numeroQuestao, 0);
+    mostrarPopUp("Ixi, tomou um caldo! Resposta errada.");
+    sessionStorage.setItem("acertouQ" + numeroQuestao, 0); // Salva 0 (erro) para essa questão específica
   }
 
   sessionStorage.setItem("pontosDoUser", pontosAtuais);
-  window.location.href = "../Quiz/" + proximaPagina;
+  setTimeout(() => {window.location.href = "../Quiz/" + proximaPagina;}, 2000);
 }
 
 // volta para a tela anterior
@@ -78,11 +80,11 @@ function verResultado() {
 
   if (totalAcertos >= 3) {
     mensagem =
-      "Parabéns! <br> Você é um verdadeiro Surfista de Alma e domina o Akahai!";
+      "Parabéns! <br> Você é um verdadeiro Surfista de Alma!";
     sessionStorage.setItem("statusFinal", "Surfista de Alma");
   } else {
     mensagem =
-      "Ixi, tomou um caldo! <br> Você ainda é um Surfista Prego, mas continue remando e estudando a história!";
+      "Ixi, tomou um caldo! <br> Você ainda é um Surfista Prego, mas continue estudando a história!";
     sessionStorage.setItem("statusFinal", "Surfista Prego");
   }
   document.getElementById("mensagemFinal").innerHTML = mensagem;
@@ -108,7 +110,8 @@ function verResultado() {
       if (resposta.ok) {
         console.log(resposta);
       } else {
-        alert("Ocorreu um erro e os resultados não foram armazenados!");
+        mostrarPopUp("Ocorreu um erro e os resultados não foram armazenados!");
+        setTimeout(() => { document.getElementById("meuPopUp").classList.add("escondido") }, 2000);
       }
     }) // essa função é executada caso haja erros na comunicação com o backend
     .catch(function (erro) {
@@ -123,6 +126,7 @@ function jogarNovamente(riniciarJogo) {
   window.location.href = "../Quiz/" + riniciarJogo;
 }
 
+// limpar as respostas do jogo anterior
 function limparRespostas() {
   // Limpa os dados do jogo anterior
   sessionStorage.removeItem("pontosDoUser");
@@ -133,6 +137,13 @@ function limparRespostas() {
   sessionStorage.removeItem("acertouQ5");
 }
 
+// voltar para a tela inicial
 function telaInicial(irTelaInicial) {
   window.location.href = "../" + irTelaInicial;
+}
+
+// Função para abrir o Pop-up
+function mostrarPopUp(mensagem) {
+  document.getElementById("textoDoPopUp").innerHTML = mensagem;
+  document.getElementById("meuPopUp").classList.remove("escondido");
 }

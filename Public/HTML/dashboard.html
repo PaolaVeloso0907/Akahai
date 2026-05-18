@@ -24,20 +24,32 @@
         <audio id="musicaFundo" autoplay loop>
             <source src="../Assets/Audio/mac-de-marco.mp3" type="audio/mpeg">
         </audio>
-        
+
         <nav class="navbar">
-            
+
             <img class="nav-logo" src="../Assets/Img/icons/logo-transparente.png" alt="Logo Akahai">
 
             <ul class="nav-lista">
-                <li><a href="../HTML/index.html">PÁGINA INICIAL</a></li>
                 <li><a href="../HTML/memorial.html">MEMORIAL</a></li>
                 <li><a href="../HTML/Quiz/quiz.html">QUIZ</a></li>
+                <li><a href="../HTML/sobre.html">SOBRE</a></li>
+                <li><button onclick="deslogar()" class="btn-sair">SAIR</button></li>
             </ul>
         </nav>
     </header>
 
+    <div class="content">
+
+    
     <main class="container-principal">
+
+        <div id="meuPopUp" class="popUp-fundo escondido">
+            <div class="popUp-container">
+                <h3>Aviso do Akahai</h3>
+                <p id="textoDoPopUp">(mensagem de aviso genérica)</p>
+            </div>
+        </div>
+
 
         <div class="titulo-principal">
             <h1>Visão geral dos insights</h1>
@@ -45,6 +57,12 @@
         </div>
 
         <div class="container-kpis">
+            <div class="kpi-respostas">
+                <h2>RESPOSTAS</h2>
+                <p id="qtdRespostas">0 RESPOSTAS</p>
+                <span>Quantidade de formulários finalizados</span>
+            </div>
+
             <div class="kpi">
                 <h2>SURFISTAS DE ALMA</h2>
                 <p id="surfistasDeAlma">0 USUÁRIOS</p>
@@ -57,11 +75,6 @@
                 <span id="porcentoErro">0% de erro</span>
             </div>
 
-            <div class="kpi">
-                <h2>RESPOSTAS</h2>
-                <p id="qtdRespostas">0 RESPOSTAS</p>
-                <span>Quantidade de formulários finalizados</span>
-            </div>
         </div>
 
         <div class="grafico-formatacao">
@@ -83,14 +96,9 @@
                 <canvas id="graficoDonut"></canvas>
             </div>
         </div>
-
-        <div class="irMemorial">
-            <h2>Na hora de surfar: Qual a prancha ideal?</h2>
-            <p>A prancha perfeita é aquela que se conecta com a sua essência. Quer descobrir qual estilo de surfe fala mais alto no seu coração? Visite o nosso Memorial e faça uma viagem no tempo. Conheça desde as pranchas de madeira do mestre Duke Kahanamoku até a evolução do esporte. Inspire-se no passado para dropar as ondas do futuro!</p>
-
-            <button class="btn-memorial" onclick="irMemorial()">Saber mais</button>
-        </div>
     </main>
+
+    </div>
 
 
 

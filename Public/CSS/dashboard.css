@@ -24,12 +24,12 @@ header {
   background-color: #f8e6cb;
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.1);
   border-radius: 10px;
-  padding: 0 30px; 
-  box-sizing: border-box; 
-  
+  padding: 0 30px;
+  box-sizing: border-box;
+
   display: flex;
-  align-items: center; 
-  justify-content: space-between; 
+  align-items: center;
+  justify-content: space-between;
 }
 
 .nav-lista {
@@ -59,11 +59,36 @@ header {
   margin-left: 1.8rem;
 }
 
+.btn-sair {
+  background-color: #c79f61;
+  color: #fff4e6;
+  border: none;
+  border-radius: 5px;
+  padding: 8px 16px;
+  font-family: "Montserrat";
+  font-weight: 600;
+  font-size: 12px;
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+}
+
+.btn-sair:hover {
+  opacity: 0.6;
+}
+
 /* MAIN */
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: nowrap;
+}
+
 .container-principal {
   display: flex;
   flex-direction: column;
-  width: 100%;
+  width: 80%;
   padding-right: 5rem;
   padding-left: 5rem;
   margin-top: 5rem;
@@ -73,14 +98,13 @@ header {
   .titulo-principal {
     display: flex;
     flex-direction: column;
-    align-items: start;
-    gap: 0.2rem;
+    justify-content: center;
     width: 30rem;
 
     h1 {
       font-family: "DynaPuff";
       color: #536267;
-      font-size: 27px;
+      font-size: 1.688rem;
     }
 
     p {
@@ -91,6 +115,7 @@ header {
   .container-kpis {
     display: flex;
     flex-direction: row;
+    justify-content: center;
     gap: 2rem;
 
     .kpi {
@@ -98,25 +123,53 @@ header {
       flex-direction: column;
       background-color: #fffbf7;
       border-radius: 1rem;
-      width: 45rem;
+      width: 30rem;
       height: 12rem;
       padding: 2rem;
       gap: 1rem;
 
       h2 {
-        font-size: small;
+        font-size: 1rem;
         color: #536267;
       }
 
       p {
-        font-size: 50px;
+        font-size: 2.8rem;
         font-weight: 600;
         color: #846e55;
         text-align: center;
       }
-      
+
       span {
-        font-size: small;
+        font-size: .8rem;
+        text-align: center;
+      }
+    }
+
+    .kpi-respostas {
+      display: flex;
+      flex-direction: column;
+      background-color: #e5c596;
+      border-radius: 1rem;
+      width: 25rem;
+      height: 12rem;
+      padding: 2rem;
+      gap: 1rem;
+
+      h2 {
+        font-size: 1rem;
+        color: #536267;
+      }
+
+      p {
+        font-size: 3rem;
+        font-weight: 600;
+        color: #846e55;
+        text-align: center;
+      }
+
+      span {
+        font-size: .8rem;
         text-align: center;
       }
     }
@@ -125,26 +178,28 @@ header {
 .grafico-formatacao {
   display: flex;
   flex-direction: row;
+  justify-content: center;
   position: relative;
   width: 100%;
   padding-top: 2px;
   gap: 2rem;
 
   .barra {
+    display: flex;
+    align-items: center;
     background-color: #fffbf7;
     border-radius: 1rem;
     width: 63rem;
-    height: 35rem;
     padding: 3rem;
 
     .titulo-flutuante {
       position: absolute;
-      top: 27px;
-      left: 30px;
+      top: 2.8rem;
+      left: 3rem;
 
       color: #2d4253;
       font-family: "Montserrat";
-      font-size: 20px;
+      font-size: 1.25rem;
       font-weight: 700;
       z-index: 10;
     }
@@ -154,7 +209,6 @@ header {
     background-color: #fffbf7;
     border-radius: 1rem;
     width: 20rem;
-    height: 35rem;
     padding: 0.7rem 2rem 1rem 2rem;
 
     position: relative;
@@ -164,12 +218,12 @@ header {
 
     .titulo-flutuante2 {
       position: absolute;
-      top: 30px;
-      left: 25px;
+      top: 1rem;
+      left: 1.5rem;
 
       color: #2d4253;
       font-family: "Montserrat";
-      font-size: 20px;
+      font-size: 1.25rem;
       font-weight: 700;
       z-index: 10;
     }
@@ -184,55 +238,46 @@ header {
 
     .numero-centro {
       font-family: "Montserrat", sans-serif;
-      font-size: 60px;
+      font-size: 3.75rem;
       font-weight: 700;
       color: #6e5c47;
     }
 
     .texto-centro {
       font-family: "Montserrat", sans-serif;
-      font-size: 14px;
+      font-size: 1.25rem;
       color: #6e5c47;
     }
   }
 }
 
-.irMemorial {
+/* Configs do Pop-up */
+.escondido {
+  display: none !important;
+}
+
+.popUp-fundo {
+  position: fixed; /* trava a tela até se rolar a página */
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 999;
+
   display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  background-color:#efe1cec7;
-  border-radius: 1rem;
-  padding: 2rem;
-  margin-top: 2rem;
+  justify-content: center;
+  align-items: center;
+}
 
-  h2 {
-    color: #536267;
-    font-family: "DynaPuff";
-  }
-  
-  p {
-    color: #5d6e73;
-    font-family: 'Montserrat';
-  }
-
-  .btn-memorial {
-    border: none;
-    border-radius: .7rem;
-    background-color: #596e75;
-    color: #fff4e6;
-    width: 7rem;
-    height: 2rem;
-    font-family: 'Montserrat';
-    font-weight: 500;
-
-    cursor: pointer;
-    transition: all 0.3s;
-  }
-
-  .btn-memorial:hover {
-    background-color: #879ea5;
-  }
+.popUp-container {
+  background-color: #fdf5e6;
+  border: 3px solid #c79f61;
+  color: #c79f61;
+  font-family: "Montserrat";
+  border-radius: 15px;
+  padding: 30px;
+  max-width: 400px;
+  text-align: center;
+  box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.2);
 }
 
 /* Rodapé */

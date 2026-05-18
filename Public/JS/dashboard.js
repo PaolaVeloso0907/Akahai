@@ -1,4 +1,18 @@
 function buscarQuiz() {
+  // Verificando se o usuário está logado, caso contrário, redireciona para a página de login
+  if (
+    sessionStorage.ID_USUARIO == undefined ||
+    sessionStorage.ID_USUARIO == null
+  ) {
+    mostrarPopUp(
+      "Opa, tomou um caldo! Você precisa fazer login antes de dropar essa onda e iniciar o quiz.",
+    );
+    setTimeout(() => { window.location.href = "../HTML/login.html" }, 2000);
+    return;
+  }
+
+  // ------------------------------------------------------------------------
+  // Fazendo a requisição para buscar os resultados do quiz
   fetch("/usuarios/buscar-quiz", {
     method: "GET", // get -> quando a gente nao envia 'body'
     headers: {
@@ -11,7 +25,7 @@ function buscarQuiz() {
           criarGraficos(res);
         });
       } else {
-        alert("Ocorreu um erro e os resultados não foram buscados!");
+        mostrarPopUp("Ocorreu um erro e os resultados não foram buscados!");
       }
     }) // essa função é executada caso haja erros na comunicação com o backend
     .catch(function (erro) {
@@ -20,7 +34,7 @@ function buscarQuiz() {
 }
 
 function criarGraficos(data) {
-// Variáveis para armazenar os dados dos gráficos
+  // Variáveis para armazenar os dados dos gráficos
   let surfistasDeAlma = 0;
 
   let totalSurfistas = [];
@@ -30,9 +44,8 @@ function criarGraficos(data) {
   let listaAcertosSurfistas = [0, 0, 0, 0, 0];
   let listaAcertosHaoles = [0, 0, 0, 0, 0];
 
-
-// ------------------------------------------------------------------------
-// verificando quais usuários são surfistas e quais são haoles, para calcular o total de cada perfil e exibir no gráfico de donut
+  // ------------------------------------------------------------------------
+  // verificando quais usuários são surfistas e quais são haoles, para calcular o total de cada perfil e exibir no gráfico de donut
   for (let i = 0; i < data.length; i++) {
     if (
       data[i].perfil == "Sim" &&
@@ -56,9 +69,8 @@ function criarGraficos(data) {
       surfistasDeAlma++;
     }
 
-
-// ------------------------------------------------------------------------
-// verificando a quantidade de acertos e erros de cada questão, para cada perfil
+    // ------------------------------------------------------------------------
+    // verificando a quantidade de acertos e erros de cada questão, para cada perfil
     if (data[i].acertouQ1 == 0) {
       qtdErros[1]++;
     } else {
@@ -110,20 +122,19 @@ function criarGraficos(data) {
     }
   }
 
-// ------------------------------------------------------------------------
+  // ------------------------------------------------------------------------
   // verificando qual é a questão mais errada pelos usuários
   let questaoMaisErrada = qtdErros[0];
 
   for (let i = 0; i < qtdErros.length; i++) {
     if (questaoMaisErrada <= qtdErros[i]) {
       questaoMaisErrada = qtdErros[i];
-      questaoMaisErradaTitulo = "QUESTÃO " + (i + 1)
+      questaoMaisErradaTitulo = "QUESTÃO " + (i + 1);
     }
   }
-  let porcentagemErro = 100 * questaoMaisErrada / data.length;
+  let porcentagemErro = (100 * questaoMaisErrada) / data.length;
 
-
-// ------------------------------------------------------------------------
+  // ------------------------------------------------------------------------
   // Exibindo o total de respostas enviadas ao site
   let totalRespostas = document.getElementById("numero-centro");
   totalRespostas.innerHTML = totalSurfistas.length + totalHaoles.length;
@@ -137,14 +148,13 @@ function criarGraficos(data) {
   questaoComMaisErros.innerHTML = questaoMaisErradaTitulo;
   // Exibindo a porcentagem agora
   let porcentagemErroElement = document.getElementById("porcentoErro");
-  porcentagemErroElement.innerHTML = porcentagemErro.toFixed(0) + '% de erro';
+  porcentagemErroElement.innerHTML = porcentagemErro.toFixed(0) + "% de erro";
 
   // Exibindo a quantidade de respostas enviadas ao site
   let qtdRespostas = document.getElementById("qtdRespostas");
   qtdRespostas.innerHTML = data.length;
 
-
-// ------------------------------------------------------------------------
+  // ------------------------------------------------------------------------
   // GRÁFICO BARRAS
   const grfBarra = document.getElementById("graficoBarras");
 
@@ -242,4 +252,18 @@ function criarGraficos(data) {
       },
     },
   });
+}
+
+// Função para deslogar o usuário
+function deslogar() {
+  mostrarPopUp("Até mais, surfista! Você saiu da sessão e foi deslogado com sucesso. Redirecionando para a página inicial...");
+  sessionStorage.clear();
+  setTimeout(() => { window.location.href = "../HTML/index.html" }, 2000);
+
+}
+
+// Função para abrir o Pop-up
+function mostrarPopUp(mensagem) {
+  document.getElementById("textoDoPopUp").innerHTML = mensagem;
+  document.getElementById("meuPopUp").classList.remove("escondido");
 }
