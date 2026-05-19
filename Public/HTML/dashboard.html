@@ -20,6 +20,13 @@
 </head>
 
 <body onload="buscarQuiz()">
+    <div id="meuPopUp" class="popUp-fundo escondido">
+        <div class="popUp-container">
+            <h3>Aviso do Akahai</h3>
+            <p id="textoDoPopUp">(mensagem de aviso genérica)</p>
+        </div>
+    </div>
+
     <header>
         <audio id="musicaFundo" autoplay loop>
             <source src="../Assets/Audio/mac-de-marco.mp3" type="audio/mpeg">
@@ -40,63 +47,55 @@
 
     <div class="content">
 
-    
-    <main class="container-principal">
 
-        <div id="meuPopUp" class="popUp-fundo escondido">
-            <div class="popUp-container">
-                <h3>Aviso do Akahai</h3>
-                <p id="textoDoPopUp">(mensagem de aviso genérica)</p>
-            </div>
-        </div>
+        <main class="container-principal">
 
-
-        <div class="titulo-principal">
-            <h1>Visão geral dos insights</h1>
-            <p>Dados consolidados da pesquisa geral do quiz</p>
-        </div>
-
-        <div class="container-kpis">
-            <div class="kpi-respostas">
-                <h2>RESPOSTAS</h2>
-                <p id="qtdRespostas">0 RESPOSTAS</p>
-                <span>Quantidade de formulários finalizados</span>
+            <div class="titulo-principal">
+                <h1>Visão geral dos insights</h1>
+                <p>Dados consolidados da pesquisa geral do quiz</p>
             </div>
 
-            <div class="kpi">
-                <h2>SURFISTAS DE ALMA</h2>
-                <p id="surfistasDeAlma">0 USUÁRIOS</p>
-                <span>Acertaram todas as 5 questões</span>
-            </div>
-
-            <div class="kpi">
-                <h2>O MAIOR CALDO</h2>
-                <p id="questaoComMaisErros">QUESTÃO 0</p>
-                <span id="porcentoErro">0% de erro</span>
-            </div>
-
-        </div>
-
-        <div class="grafico-formatacao">
-
-            <div class="barra">
-                <h2 class="titulo-flutuante">Surfistas vs. Haoles: Quem Sabe Mais?</h2>
-
-                <canvas id="graficoBarras"></canvas>
-            </div>
-
-            <div class="donut">
-                <h2 class="titulo-flutuante2">Surfistas no mar</h2>
-
-                <div class="centro-rosca">
-                    <h3 id="numero-centro" class="numero-centro">0</h3>
-                    <p class="texto-centro">Total</p>
+            <div class="container-kpis">
+                <div class="kpi-respostas">
+                    <h2>RESPOSTAS</h2>
+                    <p id="qtdRespostas">0 RESPOSTAS</p>
+                    <span>Quantidade de formulários finalizados</span>
                 </div>
 
-                <canvas id="graficoDonut"></canvas>
+                <div class="kpi">
+                    <h2>SURFISTAS DE ALMA</h2>
+                    <p id="surfistasDeAlma">0 USUÁRIOS</p>
+                    <span>Acertaram todas as 5 questões</span>
+                </div>
+
+                <div class="kpi">
+                    <h2>O MAIOR CALDO</h2>
+                    <p id="questaoComMaisErros">QUESTÃO 0</p>
+                    <span id="porcentoErro">0% de erro</span>
+                </div>
+
             </div>
-        </div>
-    </main>
+
+            <div class="grafico-formatacao">
+
+                <div class="barra">
+                    <h2 class="titulo-flutuante">Surfistas vs. Haoles: Quem Sabe Mais?</h2>
+
+                    <canvas id="graficoBarras"></canvas>
+                </div>
+
+                <div class="donut">
+                    <h2 class="titulo-flutuante2">Surfistas no mar</h2>
+
+                    <div class="centro-rosca">
+                        <h3 id="numero-centro" class="numero-centro">0</h3>
+                        <p class="texto-centro">Total</p>
+                    </div>
+
+                    <canvas id="graficoDonut"></canvas>
+                </div>
+            </div>
+        </main>
 
     </div>
 

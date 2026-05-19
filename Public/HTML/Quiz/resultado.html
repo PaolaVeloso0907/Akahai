@@ -18,14 +18,15 @@
 </head>
 
 <body onload="verResultado()">
-    <main>
-        <div id="meuPopUp" class="popUp-fundo escondido">
-            <div class="popUp-container">
-                <h3>Aviso do Akahai</h3>
-                <p id="textoDoPopUp">(mensagem de aviso genérica)</p>
-            </div>
+    
+    <div id="meuPopUp" class="popUp-fundo escondido">
+        <div class="popUp-container">
+            <h3>Aviso do Akahai</h3>
+            <p id="textoDoPopUp">(mensagem de aviso genérica)</p>
         </div>
-        
+    </div>
+
+    <main>
         <div class="container-video">
             <audio id="musicaFundo" autoplay loop>
                 <source src="../Assets/Audio/mac-de-marco.mp3" type="audio/mpeg">
@@ -47,7 +48,7 @@
 
                     <h2 id="mensagemFinal" class="msg-destaque"></h2>
                 </div>
-            
+
 
                 <div class="buttons">
                     <button class="btn-jogarNovamente" onclick="jogarNovamente('p1.html')">JOGAR NOVAMENTE</button>

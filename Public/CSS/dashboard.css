@@ -83,6 +83,7 @@ header {
   align-items: center;
   justify-content: center;
   flex-wrap: nowrap;
+  width: 100%;
 }
 
 .container-principal {
