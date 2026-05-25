@@ -9,20 +9,111 @@
     <link
         href="https://fonts.googleapis.com/css2?family=DynaPuff:wght@400;500;600&family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&family=Caveat:wght@400;700&display=swap"
         rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cedarville+Cursive&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="../CSS/sobre.css">
-     <link rel="icon" href="../Assets/Img/icons/Akahai-ico.svg">
+    <link rel="icon" href="../Assets/Img/icons/Akahai-ico.svg">
 
     <title>Akahai | Sobre</title>
 </head>
+
 <body>
+    <audio id="musicaFundo" autoplay loop>
+        <source src="../Assets/Audio/mac-de-marco.mp3" type="audio/mpeg">
+    </audio>
+
+    <header>
+        <nav class="navbar">
+            <ul class="nav-lista">
+                <li><a href="../HTML/index.html">PÁGINA INICIAL</a></li>
+                <li><a href="../HTML/memorial.html">MEMORIAL</a></li>
+                <li class="nav-logo">
+                    <img src="../Assets/Img/icons/Akahai-ico.svg" alt="Logo Akahai">
+                </li>
+                <li><a href="../HTML/Quiz/quiz.html">QUIZ</a></li>
+                <li><a href="../HTML/sobre.html">SOBRE</a></li>
+                <li><button class="btn-entrar">ENTRAR</li></button>
+            </ul>
+        </nav>
+    </header>
 
     <main>
-        <audio id="musicaFundo" autoplay loop>
-            <source src="../Assets/Audio/mac-de-marco.mp3" type="audio/mpeg">
-        </audio>
+        <div class="img-principal">
+            <img src="../Assets/Img/sobre/Group 40.png" class="conteudo-principal">
+        </div>
 
-        
+        <div class="linha-do-tempo">
+            <img src="../Assets/Img/sobre/Group 44.png">
+        </div>
+
+        <div class="container-frase">
+            <img src="../Assets/Img/sobre/quote.png">
+            <h2>
+                "It is a long established fact that a reader will be distracted by the readable content of a page when
+                looking at its layout."
+            </h2>
+            <p>- fulano de tal</p>
+        </div>
+
+        <div class="conteudo-valores">
+            <div class="akahai">
+                <h2>AKAHAI</h2>
+                <p>Do havaiano, "akahai" significa bondade, gentileza e amabilidade. Para mim, fazer esse projeto foi
+                    muito importante pois na história do surfe é onde consigo encontrar o significado puro da gentileza,
+                    que é um valor que valorizo muito e uma vez que nossa intenção na onda é apenas um ajudar o outro e
+                    poder surfar em harmonia aproveitando o ambiente cooperativo e de conexão. Poder ter essa
+                    oportunidade de tentar transmitir isso, para mim é gratificante pois eu de verdade acredito que
+                    "gentileza, gera gentileza" e assim o mundo seria melhor. </p>
+            </div>
+
+            <div class="humildade">
+                <h2>HUMILDADE</h2>
+                <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered
+                    alteration in some form, by injected humour, or randomised words which don't look even slightly
+                    believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't
+                    anything</p>
+            </div>
+
+            <div class="ohonui">
+                <h2>OHONUI</h2>
+                <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered
+                    alteration in some form, by injected humour, or randomised words which don't look even slightly
+                    believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't
+                    anything</p>
+            </div>
+
+        </div>
+
+        <div class="content-irMemorial">
+            <div class="irMemorial">
+                <h3>Quer saber mais sobre o projeto?</h3>
+                <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered
+                    alteration
+                    in some form, by injected humour, or randomised words which don't look even slightly believable. If
+                    you
+                    are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything</p>
+                <button class="btn-irMemorial" onclick="irMemorial()">SABER MAIS</button>
+            </div>
+        </div>
+
+        <footer class="rodape">
+            <img src="../Assets/Img/icons/logo-transparente.png" alt="Akahai" class="logo-rodape">
+
+            <div class="content-footer">
+                <div class="social-icons">
+                    <a href="https://www.instagram.com/oh.hey.lola/" class="btn-social"><img
+                            src="../Assets/Img/icons/instagram.svg" alt="Instagram"></a>
+                    <a href="https://www.linkedin.com/in/paola-veloso-86a0552aa/" class="btn-social"><img
+                            src="../Assets/Img/icons/linkedin.svg" alt="LinkedIn"></a>
+                    <a href="https://github.com/PaolaVeloso0907" class="btn-social"><img
+                            src="../Assets/Img/icons/github.svg" alt="GitHub">\</a>
+                </div>
+                <p class="creditos">made with ♥ by @PaolaVeloso0907</p>
+            </div>
+        </footer>
+
     </main>
-    
 </body>
+
 </html>

@@ -89,6 +89,14 @@ function verResultado() {
   }
   document.getElementById("mensagemFinal").innerHTML = mensagem;
 
+  // questoes = [] -> corrigir n:n
+  // for(let i = 0; i) {
+  //   questoes.push({
+  //     numeroQuestao: questao,
+  //     acertou: true
+  //   })
+  // }
+
   fetch("/usuarios/gravar-quiz", {
     method: "POST", // post -> quando a egnte enviar 'body'
     headers: {
@@ -97,7 +105,7 @@ function verResultado() {
     body: JSON.stringify({
       pontuacao: totalAcertos,
       idUsuario: sessionStorage.ID_USUARIO,
-      q1: sessionStorage.acertouQ1,
+      acertouQ1: sessionStorage.acertouQ1,
       q2: sessionStorage.acertouQ2,
       q3: sessionStorage.acertouQ3,
       q4: sessionStorage.acertouQ4,
