@@ -105,7 +105,7 @@ function verResultado() {
     body: JSON.stringify({
       pontuacao: totalAcertos,
       idUsuario: sessionStorage.ID_USUARIO,
-      acertouQ1: sessionStorage.acertouQ1,
+      q1: sessionStorage.acertouQ1,
       q2: sessionStorage.acertouQ2,
       q3: sessionStorage.acertouQ3,
       q4: sessionStorage.acertouQ4,
