@@ -1,4 +1,6 @@
 function entrar() {
+  mensagem_login.innerHTML = '';
+
   var emailVar = ipt_email.value;
   var senhaVar = ipt_senha.value;
 

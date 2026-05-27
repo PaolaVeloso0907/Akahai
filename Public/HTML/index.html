@@ -29,11 +29,10 @@
                 <li><a href="../HTML/index.html">PÁGINA INICIAL</a></li>
                 <li><a href="../HTML/memorial.html">MEMORIAL</a></li>
                 <li class="nav-logo">
-                    <img src="../Assets/Img/icons/logo-transparente.png" alt="Logo Akahai">
+                    <img src="../Assets/Img/icons/Akahai-ico.svg" alt="Logo Akahai">
                 </li>
-                <li><a href="../HTML/Quiz/quiz.html">QUIZ</a></li>
                 <li><a href="../HTML/sobre.html">SOBRE</a></li>
-                <li><button><a href="../HTML/login.html" class="btn-entrar">ENTRAR</a></li></button>
+                <li><button class="btn-entrar" onclick="entrar()">ENTRAR</li></button>
             </ul>
         </nav>
     </header>
@@ -46,10 +45,6 @@
         <div class="container-2">
             <div class="content-titulo-BemVindo">
                 <h2>Bem vindo ao Akahai!</h2>
-                <p>
-                    O surfe nasceu no coração da Polinésia não apenas como um esporte, mas como uma
-                    <strong>manifestação sagrada de harmonia entre o homem e a natureza.</strong>
-                </p>
                 <p>
                     O projeto <strong>The Surf Journey</strong> é um convite para explorar essa jornada simbólica.
                     Mergulhamos na evolução de um estilo de vida que transcende as praias e se transforma em cultura.
@@ -119,3 +114,8 @@
 
 </body>
 </html>
+<script>
+    function entrar() {
+        window.location.href = "../HTML/login.html"
+    }
+</script>

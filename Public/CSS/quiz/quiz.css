@@ -8,8 +8,16 @@
 
 body {
   font-family: "Montserrat";
-  background-color: #efe1ce;
   color: #536267;
+}
+
+a {
+  color: #efe1ce;
+  text-decoration: underline;
+}
+
+small {
+  color: #ebdcc5;
 }
 
 header {

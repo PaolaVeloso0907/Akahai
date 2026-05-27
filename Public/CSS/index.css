@@ -88,6 +88,12 @@ body {
   color: #efe1ce !important;
   font-weight: 500;
   text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.btn_entrar:hover {
+  opacity: 0.6;
+  transform: scale(1.05);
 }
 
 /* Container 2*/
@@ -106,7 +112,7 @@ body {
 
   h2 {
     font-family: "DynaPuff";
-    font-size: 70px;
+    font-size: 6rem;
     font-weight: 600;
     color: #536267;
     line-height: 1.2;
@@ -132,11 +138,12 @@ body {
     font-weight: 600;
     font-size: 16px;
     color: #949a9d;
-    transition: color 0.3s;
+    transition: all 0.3s ease;
   }
 
   .btn-ver-mais:hover {
-    color: #abbcc1;
+    transform: scale(1.05);
+    opacity: 0.6;
   }
 }
 
@@ -169,7 +176,7 @@ body {
 
 .tab {
   background: none;
-  border:none;
+  border: none;
   border-bottom: 3px solid transparent;
   font-family: "Montserrat";
   font-weight: 700;
@@ -252,11 +259,12 @@ body {
     margin-top: 25px;
     display: inline-block;
     cursor: pointer;
-    transition: color 0.3s;
+    transition: all 0.3s ease;
   }
 
   .ver-mais:hover {
-    color: #cdbda6;
+    opacity: 0.6;
+    transform: scale(1.05);
   }
 }
 
@@ -309,11 +317,12 @@ body {
   position: absolute;
   bottom: 40px;
   right: 60px;
-  transition: background-color 0.3s;
+  transition: all 0.3s ease;
 }
 
 .btn-jogar:hover {
   background-color: #aeb382;
+  transform: scale(1.05);
 }
 
 /* Rodapé */

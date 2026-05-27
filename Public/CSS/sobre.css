@@ -92,14 +92,18 @@ header {
   align-items: center;
   padding: 1rem;
   margin-bottom: 2.5rem;
+  transition: all 0.3s ease;
+}
+
+.img-principal:hover {
+    transform:scale(1.03);
 }
 
 .linha-do-tempo {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 140rem;
-  padding: 5rem;
+  padding: auto;
 
   background-color: #fff6eacc;
 }
@@ -112,15 +116,18 @@ header {
   width: 100%;
   height: 614px;
   gap: 2rem;
+  padding: 3rem;
   background: #e3c390;
+  transition: all 0.3s ease-in;
 
   h2 {
     color: #fff6ea;
     text-align: center;
     font-family: "Cedarville Cursive";
-    font-size: 48px;
+    font-size: 64px;
     font-weight: 400;
     line-height: 60px;
+    transition: all 0.3s ease-in;
   }
 
   p {
@@ -130,21 +137,26 @@ header {
     font-size: 32px;
     font-weight: 400;
   }
+
+  h2:hover{
+    transform:scale(1.05);
+  }
 }
+
 
 .conteudo-valores {
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 4rem;
+  padding: 6rem;
   gap: 2rem;
 
   h2 {
     color: #c79f61;
     text-align: center;
     font-family: DynaPuff;
-    font-size: 40px;
+    font-size: 2.5rem;
     font-style: normal;
     font-weight: 500;
     line-height: normal;
@@ -153,17 +165,17 @@ header {
   p {
     color: #c79f61;
     font-family: Montserrat;
-    font-size: 20px;
+    font-size: 1.188rem;
     font-style: normal;
     font-weight: 500;
     line-height: normal;
   }
 
   .akahai,
-  .humildade,
-  .ohonui {
+  .pono,
+  .ahonui {
     width: 415px;
-    height: 526px;
+    height: 500px;
     display: flex;
     flex-direction: column;
     border-radius: 20px;
@@ -174,10 +186,10 @@ header {
   }
 
   .akahai:hover,
-  .humildade:hover,
-  .ohonui:hover {
-  transform: scale(1.05); /* scale -> faz um zoom */
-  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.05); 
+  .pono:hover,
+  .ahonui:hover {
+    transform: scale(1.08); /* scale -> faz um zoom */
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.05);
   }
 }
 
@@ -186,7 +198,7 @@ header {
   align-items: center;
   justify-content: center;
   width: 100%;
-  padding: 3rem;
+  padding-bottom: 6rem;
 
   .irMemorial {
     width: 1304px;
@@ -237,6 +249,7 @@ header {
 
     .btn-irMemorial:hover {
       opacity: 0.7;
+      transform: scale(1.08);
     }
   }
 }

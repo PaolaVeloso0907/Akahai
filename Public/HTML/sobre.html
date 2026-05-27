@@ -31,9 +31,8 @@
                 <li class="nav-logo">
                     <img src="../Assets/Img/icons/Akahai-ico.svg" alt="Logo Akahai">
                 </li>
-                <li><a href="../HTML/Quiz/quiz.html">QUIZ</a></li>
                 <li><a href="../HTML/sobre.html">SOBRE</a></li>
-                <li><button class="btn-entrar">ENTRAR</li></button>
+                <li><button class="btn-entrar" onclick="entrar()">ENTRAR</li></button>
             </ul>
         </nav>
     </header>
@@ -43,44 +42,30 @@
             <img src="../Assets/Img/sobre/Group 40.png" class="conteudo-principal">
         </div>
 
-        <div class="linha-do-tempo">
-            <img src="../Assets/Img/sobre/Group 44.png">
-        </div>
-
         <div class="container-frase">
             <img src="../Assets/Img/sobre/quote.png">
-            <h2>
-                "It is a long established fact that a reader will be distracted by the readable content of a page when
-                looking at its layout."
-            </h2>
-            <p>- fulano de tal</p>
+            <h2>"Hey Jude, don't make it bad. Take a sad song and make it better."</h2>
+            <p><i>- "Hey Jude", The Beatles</i></p>
+        </div>
+
+        <div class="linha-do-tempo">
+            <img src="../Assets/Img/sobre/Group 49.png">
         </div>
 
         <div class="conteudo-valores">
             <div class="akahai">
                 <h2>AKAHAI</h2>
-                <p>Do havaiano, "akahai" significa bondade, gentileza e amabilidade. Para mim, fazer esse projeto foi
-                    muito importante pois na história do surfe é onde consigo encontrar o significado puro da gentileza,
-                    que é um valor que valorizo muito e uma vez que nossa intenção na onda é apenas um ajudar o outro e
-                    poder surfar em harmonia aproveitando o ambiente cooperativo e de conexão. Poder ter essa
-                    oportunidade de tentar transmitir isso, para mim é gratificante pois eu de verdade acredito que
-                    "gentileza, gera gentileza" e assim o mundo seria melhor. </p>
+                <p>A bondade é o desejo do bem; a gentileza é a sua aplicação. Vivi isso no surfe quando um cardume de arraias invadiu a praia. No pânico geral, uma colega travou no mar com crise de medo. Usando minha prancha mais larga, escolhi voltar e ajudá-la a sair em segurança. A cultura do surfe é sobre isso: união e o coletivo acima de tudo.</p>
             </div>
 
-            <div class="humildade">
-                <h2>HUMILDADE</h2>
-                <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered
-                    alteration in some form, by injected humour, or randomised words which don't look even slightly
-                    believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't
-                    anything</p>
+            <div class="ahonui">
+                <h2>AHONUI</h2>
+                <p>Perseverança é avançar mesmo diante da dor. Após cortar o pé com a quilha às vésperas de um campeonato regional, decidi competir mesmo machucada. Superei o limite, me adaptei e conquistei o pódio amador com o maior número de ondas surfadas. O surfe ensina exatamente isso: persistir, levantar após cada queda e dar um novo significado às dificuldades.</p>
             </div>
 
-            <div class="ohonui">
-                <h2>OHONUI</h2>
-                <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered
-                    alteration in some form, by injected humour, or randomised words which don't look even slightly
-                    believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't
-                    anything</p>
+            <div class="pono">
+                <h2>PONO</h2>
+                <p>Justiça é agir com retidão e imparcialidade. No mar, me deparei com um surfista que constantemente diminuía uma colega e, um dia, a rabeou perigosamente para fora da onda. Tomei a atitude de intervir e confrontá-lo, defendendo que o mar é livre e todos têm o mesmo direito de surfar. Meu senso de justiça foi moldado pela cultura do mar: sem respeito e igualdade, não há surfe.</p>
             </div>
 
         </div>
@@ -88,11 +73,7 @@
         <div class="content-irMemorial">
             <div class="irMemorial">
                 <h3>Quer saber mais sobre o projeto?</h3>
-                <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered
-                    alteration
-                    in some form, by injected humour, or randomised words which don't look even slightly believable. If
-                    you
-                    are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything</p>
+                <p>Toda essa conexão entre a cultura do surfe e o desenvolvimento do projeto tem uma história real por trás. Te convido a visitar a nossa tela de Memorial para entender como uni os aprendizados do mar com a minha jornada no mundo da tecnologia. Vamos lá?</p>
                 <button class="btn-irMemorial" onclick="irMemorial()">SABER MAIS</button>
             </div>
         </div>
@@ -117,3 +98,13 @@
 </body>
 
 </html>
+
+<script>
+    function irMemorial() {
+        window.location.href = '../HTML/memorial.html'
+    }
+
+    function entrar() {
+        window.location.href = '../HTML/login.html'
+    }
+</script>
