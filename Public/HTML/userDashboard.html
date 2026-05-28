@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=DynaPuff:wght@400;500;600&family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&family=Caveat:wght@400;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../CSS/userDashboard.css">
+    <link rel="icon" href="../Assets/Img/icons/Akahai-ico.svg">
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="../JS/login.js"></script>
+
+
+    <title>Akahai | Área do Usuário</title>
+</head>
+
+<body>
+
+    <header>
+        <nav class="navbar">
+            <ul class="nav-lista">
+                <li><a href="../HTML/memorial.html">MEMORIAL</a></li>
+                <li><a href="../HTML/dashboard.html">LEADERBOARD</a></li>
+                <li class="nav-logo">
+                    <img src="../Assets/Img/icons/Akahai-ico.svg" alt="Logo Akahai">
+                </li>
+                <li><a href="../HTML/sobre.html">SOBRE</a></li>
+                <li><button onclick="deslogar()" class="btn-sair">SAIR</button></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+
+        <div class="container-principal">
+
+
+            <div class="mensagem-bemVindo">
+                <p class="subtitulo">AREA DO USUÁRIO</p>
+                <h1>ALOHA, <span id="nomeUsuario">Fulano</span>!</h1>
+                <p class="subtitulo">O oceano te espera. O que vamos explorar hoje?</p>
+            </div>
+
+
+            <div class="container-memorial-quiz">
+                <div class="lado-memorial">
+                    <p>EXPLORE THE ARCHIVE</p>
+                    <h2>MEMORIAL</h2>
+                    <p>Mergulhe na história profunda do Surf. Conheça as lendas que moldaram o lifestyle e os momentos
+                        que definiram gerações nas ondas</p>
+                    <button class="btn-memorial" onclick="irMemorial()">SABER MAIS</button>
+                </div>
+
+                <div class="lado-quiz">
+                    <div class="quiz-texto">
+                        <img src="../Assets/Img/dash/file-question-mark.png">
+
+                        <p>TESTE A SI MESMO</p>
+                        <h2>QUIZ</h2>
+                        <p>Teste seus ocnhecimentos sobre a cultura e os pioneiros do surf mundial.</p>
+                        <button class="btn-memorial" onclick="irQuiz()">INICIAR TESTE</button>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="container-dash">
+                <p>LEADERBOARD DO SURFE</p>
+                <h2>VISÃO GERAL</h2>
+                <p>Compare seu progresso, reveja seus resultados e dos seus amigos e veja como você se classifica entre
+                    os guardiões do legado. Você é um Haole ou um Surfista?</p>
+                <button class="btn-memorial" onclick="irDash()">CONFERIR MÉTRICAS</button>
+            </div>
+        </div>
+    </main>
+
+    <footer class="rodape">
+        <img src="../Assets/Img/icons/logo-transparente.png" alt="Akahai" class="logo-rodape">
+
+        <div class="content-footer">
+            <div class="social-icons">
+                <a href="https://www.instagram.com/oh.hey.lola/" class="btn-social"><img
+                        src="../Assets/Img/icons/instagram.svg" alt="Instagram"></a>
+                <a href="https://www.linkedin.com/in/paola-veloso-86a0552aa/" class="btn-social"><img
+                        src="../Assets/Img/icons/linkedin.svg" alt="LinkedIn"></a>
+                <a href="https://github.com/PaolaVeloso0907" class="btn-social"><img
+                        src="../Assets/Img/icons/github.svg" alt="GitHub">\</a>
+            </div>
+            <p class="creditos">made with ♥ by @PaolaVeloso0907</p>
+        </div>
+    </footer>
+
+</body>
+
+</html>
+
+<script>
+    let nomeSalvo = sessionStorage.getItem("NOME_LOGADO");
+
+    if (nomeSalvo != null) {
+        document.getElementById('nomeUsuario').innerHTML = nomeSalvo;
+    }
+
+    function irMemorial() {
+        window.location.href = '../HTML/memorial.html'
+    }
+
+    function irQuiz() {
+        window.location.href = '../HTML/Quiz/quiz.html'
+    }
+
+    function irDash() {
+        window.location.href = '../HTML/dashboard.html'
+    }
+</script>

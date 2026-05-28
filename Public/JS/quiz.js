@@ -1,3 +1,5 @@
+let Numero_Quiz = 1;
+
 // Função para iniciar o jogo
 function iniciar() {
   if (
@@ -50,17 +52,17 @@ function proximo(proximaPagina, numeroQuestao) {
   let pontosAtuais = Number(sessionStorage.getItem("pontosDoUser")) || 0;
 
   if (alternativaSelecionada === respostaCertaAtual) {
-    mostrarPopUp("Boa! Dropou na onda certa! Ganhou ponto.");
+    mostrarPopUp("Boa! Ganhou ponto.");
     pontosAtuais++;
     sessionStorage.setItem("acertouQ" + numeroQuestao, 1); // Salva 1 (acerto) para essa questão específica
 
   } else {
-    mostrarPopUp("Ixi, tomou um caldo! Resposta errada.");
+    mostrarPopUp("Ixi! Resposta errada.");
     sessionStorage.setItem("acertouQ" + numeroQuestao, 0); // Salva 0 (erro) para essa questão específica
   }
 
   sessionStorage.setItem("pontosDoUser", pontosAtuais);
-  setTimeout(() => {window.location.href = "../Quiz/" + proximaPagina;}, 2000);
+  setTimeout(() => {window.location.href = "../Quiz/" + proximaPagina;}, 2500);
 }
 
 // volta para a tela anterior
@@ -89,21 +91,14 @@ function verResultado() {
   }
   document.getElementById("mensagemFinal").innerHTML = mensagem;
 
-  // questoes = [] -> corrigir n:n
-  // for(let i = 0; i) {
-  //   questoes.push({
-  //     numeroQuestao: questao,
-  //     acertou: true
-  //   })
-  // }
-
   fetch("/usuarios/gravar-quiz", {
     method: "POST", // post -> quando a egnte enviar 'body'
     headers: {
       "Content-Type": "application/json",
     },
-    body: JSON.stringify({
+    body: JSON.stringify({//por enquanto o numero do quiz é fixo, porque só tem um quiz
       pontuacao: totalAcertos,
+      numeroQuiz: Numero_Quiz, // é a FK do quiz (esse é a var global)
       idUsuario: sessionStorage.ID_USUARIO,
       q1: sessionStorage.acertouQ1,
       q2: sessionStorage.acertouQ2,

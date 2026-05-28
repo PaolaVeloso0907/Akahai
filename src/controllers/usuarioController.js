@@ -81,36 +81,26 @@ function gravarQuiz(req, res) {
 
   console.log(req.body)
 
-  let pontuacao = req.body.pontuacao;
-  let idUsuario = req.body.idUsuario;
-  let q1 = req.body.q1;
-  let q2 = req.body.q2;
-  let q3 = req.body.q3;
-  let q4 = req.body.q4;
-  let q5 = req.body.q5;
+  let resultado = {
+    pontuacao: req.body.pontuacao,
+    numeroQuiz: req.body.numeroQuiz,
+    idUsuario: req.body.idUsuario,
+    q1: req.body.q1,
+    q2: req.body.q2,
+    q3: req.body.q3,
+    q4: req.body.q4,
+    q5: req.body.q5,
+  }
 
-  if (idUsuario == undefined) {
+  if (resultado.idUsuario == undefined) {
     res.status(400).send("Usuário inválido!");
     return
   }
 
   usuarioModel
-  .gravarResultado(q1, q2, q3, q4, q5)
-  .then(function (resultado) {
-    let idResultado = resultado.insertId
-
-    usuarioModel
-    .gravarQuiz(pontuacao, idUsuario, idResultado)
-    .then(function (resultado) {
-      console.log(resultado);
-    })
-    .catch(function (erro) {
-      console.log(erro);
-      console.log("\nHouve um erro ao gravar o quiz! Erro: ", erro.sqlMessage,);
-      res.status(500).json(erro.sqlMessage);
-      return
-    });
-
+  .gravarResultado(resultado)
+  .then(function (res) {
+    console.log(res);
   })
   .catch(function (erro) {
     console.log(erro);
@@ -121,11 +111,12 @@ function gravarQuiz(req, res) {
 }
 
 function buscarQuiz(req, res) {
-  console.log(req.body)
+  let numeroQuiz = req.body.numeroQuiz;
 
   usuarioModel
-  .buscarQuiz()
+  .buscarQuiz(numeroQuiz)
   .then(function (resultado) {
+    console.log(resultado)
     res.json(resultado);
   })
   .catch(function (erro) {

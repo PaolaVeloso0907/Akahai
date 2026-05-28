@@ -17,7 +17,7 @@ router.post("/gravar-quiz", function (req, res) {
     usuarioController.gravarQuiz(req, res);
 });
 
-router.get("/buscar-quiz", function (req, res) {
+router.post("/buscar-quiz", function (req, res) {
     usuarioController.buscarQuiz(req, res);
 });
 

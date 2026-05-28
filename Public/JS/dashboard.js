@@ -1,3 +1,5 @@
+let Numero_Quiz = 1;
+
 function buscarQuiz() {
   // Verificando se o usuário está logado, caso contrário, redireciona para a página de login
   if (
@@ -13,8 +15,12 @@ function buscarQuiz() {
 
   // ------------------------------------------------------------------------
   // Fazendo a requisição para buscar os resultados do quiz
+  //este dashboard é só sobre o quiz 1!!! por isso tem que enviar o id do quiz
   fetch("/usuarios/buscar-quiz", {
-    method: "GET", // get -> quando a gente nao envia 'body'
+    method: "POST",
+    body: JSON.stringify({
+      numeroQuiz: Numero_Quiz // aqui que eu to buscando
+    }),
     headers: {
       "Content-Type": "application/json",
     },
@@ -25,7 +31,9 @@ function buscarQuiz() {
           criarGraficos(res);
         });
       } else {
-        mostrarPopUp("Ocorreu um erro e os resultados não foram buscados!");
+         setTimeout(() => { 
+          mostrarPopUp("Ocorreu um erro e os resultados não foram buscados!");
+        }, 2500);
       }
     }) // essa função é executada caso haja erros na comunicação com o backend
     .catch(function (erro) {
@@ -72,7 +80,7 @@ function criarGraficos(data) {
     // ------------------------------------------------------------------------
     // verificando a quantidade de acertos e erros de cada questão, para cada perfil
     if (data[i].acertouQ1 == 0) {
-      qtdErros[1]++;
+      qtdErros[0]++;
     } else {
       if (data[i].perfil == "Sim") {
         listaAcertosSurfistas[0]++;
@@ -82,7 +90,7 @@ function criarGraficos(data) {
     }
 
     if (data[i].acertouQ2 == 0) {
-      qtdErros[2]++;
+      qtdErros[1]++;
     } else {
       if (data[i].perfil == "Sim") {
         listaAcertosSurfistas[1]++;
@@ -92,7 +100,7 @@ function criarGraficos(data) {
     }
 
     if (data[i].acertouQ3 == 0) {
-      qtdErros[3]++;
+      qtdErros[2]++;
     } else {
       if (data[i].perfil == "Sim") {
         listaAcertosSurfistas[2]++;
@@ -123,7 +131,7 @@ function criarGraficos(data) {
   }
 
   // ------------------------------------------------------------------------
-  // verificando qual é a questão mais errada pelos usuários
+  // comparando qual é a questão mais errada pelos usuários
   let questaoMaisErrada = qtdErros[0];
 
   for (let i = 0; i < qtdErros.length; i++) {
@@ -133,6 +141,8 @@ function criarGraficos(data) {
     }
   }
   let porcentagemErro = (100 * questaoMaisErrada) / data.length;
+//                                  qtdErros        total de respostas no quiz
+
 
   // ------------------------------------------------------------------------
   // Exibindo o total de respostas enviadas ao site
@@ -256,9 +266,9 @@ function criarGraficos(data) {
 
 // Função para deslogar o usuário
 function deslogar() {
-  mostrarPopUp("Até mais, surfista! Você saiu da sessão e foi deslogado com sucesso. Redirecionando para a página inicial...");
+  mostrarPopUp("Até mais, surfista! Você foi deslogado com sucesso. Redirecionando para a página inicial...");
   sessionStorage.clear();
-  setTimeout(() => { window.location.href = "../HTML/index.html" }, 2000);
+  setTimeout(() => { window.location.href = "../HTML/index.html" }, 2500);
 
 }
 

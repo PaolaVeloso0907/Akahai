@@ -1,5 +1,5 @@
 function entrar() {
-  mensagem_login.innerHTML = '';
+  mensagem_login.innerHTML = "";
 
   var emailVar = ipt_email.value;
   var senhaVar = ipt_senha.value;
@@ -10,39 +10,43 @@ function entrar() {
     return;
   }
 
+  //---------------------------------------------------------------------------------------------------------
   // Informa no console as informações de login do user
   console.log("FORM LOGIN: ", emailVar);
   console.log("FORM SENHA: ", senhaVar);
 
   // envia os dados do login para o backend para verificar se o email e senha estão corretos
-  fetch("/usuarios/autenticar", { 
-    method: "POST", 
-    headers: { 
+  fetch("/usuarios/autenticar", {
+    method: "POST",
+    headers: {
       "Content-Type": "application/json",
     },
-    body: JSON.stringify({ 
-      emailServer: emailVar, 
+    body: JSON.stringify({
+      emailServer: emailVar,
       senhaServer: senhaVar,
     }),
-  }) 
-    .then(function (resposta) { 
+  })
+    .then(function (resposta) {
       console.log("ESTOU NO THEN DO entrar()!");
 
       if (resposta.ok) {
         console.log(resposta);
 
-        resposta.json().then((json) => { // converte a resposta do fetch para json, para acessar os dados do usuário
+        resposta.json().then((json) => {
+          // converte a resposta do fetch para json, para acessar os dados do usuário
           console.log(json);
           console.log(JSON.stringify(json));
           sessionStorage.EMAIL_USUARIO = json.email;
           sessionStorage.NOME_USUARIO = json.nome;
           sessionStorage.ID_USUARIO = json.id;
 
-          setTimeout(function () { 
-            window.location = "../HTML/dashboard.html";
-          }, 1000); 
-        });
+          // Adicionando o nome do usuario na tela de "oi" após login
+          sessionStorage.setItem("NOME_LOGADO", json.nome);
 
+          setTimeout(function () {
+            window.location = "../HTML/userDashboard.html";
+          }, 1000);
+        });
       } else {
         mensagem_login.innerHTML = "Usuário ou senha inválidos!";
 
@@ -58,6 +62,7 @@ function entrar() {
     .catch(function (erro) {
       console.log(erro);
     });
+  //-----------------------------------------------------------------------------------------------------------
 
   return false;
 }
@@ -66,8 +71,8 @@ function entrar() {
 function ehValido(emailVar, senhaVar) {
   if (emailVar == "" || senhaVar == "") {
     mensagem_login.innerHTML = "Preencha os campos em branco!";
-    return false; 
+    return false;
   }
 
-  return true; 
+  return true;
 }

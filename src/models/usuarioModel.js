@@ -22,30 +22,20 @@ function cadastrar(nome, email, senha, perfil) {
     return database.executar(instrucaoSql);
 }
 
-function gravarResultado(q1, q2, q3, q4, q5) {
-    console.log("ACESSEI O USUARIO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function gravarResultado():", q1, q2, q3, q4, q5);
+function gravarResultado(resultado) {
+    console.log("ACESSEI O USUARIO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function gravarResultado():", resultado);
 
     var instrucaoSql = `
-        INSERT INTO resultado (acertouQ1, acertouQ2, acertouQ3, acertouQ4, acertouQ5) VALUES ('${q1}', '${q2}', '${q3}', '${q4}', '${q5}');
+        INSERT INTO resultado (fkUsuario, fkQuiz, pontuacaoTotal, acertouQ1, acertouQ2, acertouQ3, acertouQ4, acertouQ5) VALUES ('${resultado.idUsuario}', '${resultado.numeroQuiz}', '${resultado.pontuacao}', '${resultado.q1}', '${resultado.q2}', '${resultado.q3}', '${resultado.q4}', '${resultado.q5}');
     `;
     console.log("Executando a instrução SQL: \n" + instrucaoSql);
     return database.executar(instrucaoSql);
 }
 
-function gravarQuiz(pontuacao, idUsuario, idResultado) {
-    console.log("ACESSEI O USUARIO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function gravarQuiz():", pontuacao, idUsuario, idResultado);
-
-    var instrucaoSql = `
-        INSERT INTO quiz (pontuacaoTotal, fkUsuario, fkResultado) VALUES ('${pontuacao}', '${idUsuario}', '${idResultado}');
-    `;
-    console.log("Executando a instrução SQL: \n" + instrucaoSql);
-    return database.executar(instrucaoSql);
-}
-
-function buscarQuiz() {
+function buscarQuiz(numeroQuiz) {
     console.log("ACESSEI O USUARIO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function buscarQuiz() ")
     var instrucaoSql = `
-        SELECT quiz.*, resultado.*, usuario.perfil FROM quiz JOIN resultado ON quiz.fkResultado = resultado.idResultado JOIN usuario ON quiz.fkUsuario = usuario.idUsuario;
+        SELECT r.*, u.perfil FROM resultado r JOIN usuario u ON u.idUsuario = r.fkUsuario WHERE r.fkQuiz = ${numeroQuiz};
     `;
     console.log("Executando a instrução SQL: \n" + instrucaoSql);
     return database.executar(instrucaoSql);
@@ -54,7 +44,6 @@ function buscarQuiz() {
 module.exports = {
     autenticar,
     cadastrar,
-    gravarResultado, 
-    gravarQuiz,
+    gravarResultado,
     buscarQuiz
 };

@@ -26,35 +26,33 @@
             <p id="textoDoPopUp">(mensagem de aviso genérica)</p>
         </div>
     </div>
+    
+    <audio id="musicaFundo" autoplay loop>
+        <source src="../Assets/Audio/mac-de-marco.mp3" type="audio/mpeg">
+    </audio>
 
     <header>
-        <audio id="musicaFundo" autoplay loop>
-            <source src="../Assets/Audio/mac-de-marco.mp3" type="audio/mpeg">
-        </audio>
-
         <nav class="navbar">
-
-            <img class="nav-logo" src="../Assets/Img/icons/logo-transparente.png" alt="Logo Akahai">
-
             <ul class="nav-lista">
                 <li><a href="../HTML/memorial.html">MEMORIAL</a></li>
+                <li><a href="../HTML/dashboard.html">LEADERBOARD</a></li>
+                <li class="nav-logo">
+                    <img src="../Assets/Img/icons/Akahai-ico.svg" alt="Logo Akahai">
+                </li>
                 <li><a href="../HTML/Quiz/quiz.html">QUIZ</a></li>
-                <li><a href="../HTML/dashboard.html">DASHBOARD</a></li>
                 <li><button onclick="deslogar()" class="btn-sair">SAIR</button></li>
             </ul>
         </nav>
-
-        
     </header>
-
-    <div class="content">
 
 
         <main class="container-principal">
 
-            <div class="titulo-principal">
-                <h1>Visão geral dos insights</h1>
-                <p>Dados consolidados da pesquisa geral do quiz</p>
+            <div id="content">
+                <div class="titulo-principal">
+                    <h1>LEADERBOARD</h1>
+                    <p>Dados consolidados de cada inscrito que interagir com o quiz</p>
+                </div>
             </div>
 
             <div class="container-kpis">
@@ -98,8 +96,6 @@
                 </div>
             </div>
         </main>
-
-    </div>
 
 
 
