@@ -37,7 +37,7 @@ O desenvolvimento seguiu as boas práticas do PMBOK e metodologias ágeis:
 * [Link para o protótipo do projeto](https://www.figma.com/design/ANvV6NAXEslzqoYEwk2MbD/Akahai--The-Surf-Journey?node-id=0-1&t=czRetmbVp5HDNk92-1)
 * [Link para a documentação do projeto](https://1drv.ms/w/c/f273a2463d1f8d25/IQDUcrLXqrcDS62WujiU9t2DATx5kYbwQ9SLBOV2RrXv5J4?e=HSmkds)
 * [Link para o Quadro do Trello](https://trello.com/b/FHQvgHeK/the-surf-journey)
-* ![Modelo Lógico - Akahai](../Akahai/Public/Assets/Img/modelagem-Akahai.png)
+
 
 ---
 
