@@ -13,23 +13,29 @@
     <link rel="icon" href="../Assets/Img/icons/Akahai-ico.svg">
 
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script src="../JS/login.js"></script>
+    <script src="../JS/dashboard.js"></script>
 
 
     <title>Akahai | Área do Usuário</title>
 </head>
 
 <body>
+    <div id="meuPopUp" class="popUp-fundo escondido">
+        <div class="popUp-container">
+            <h3>Aviso do Akahai</h3>
+            <p id="textoDoPopUp">(mensagem de aviso genérica)</p>
+        </div>
+    </div>
 
     <header>
         <nav class="navbar">
             <ul class="nav-lista">
-                <li><a href="../HTML/memorial.html">MEMORIAL</a></li>
+                <li><a href="../HTML/userDashboard.html">INÍCIO</a></li>
                 <li><a href="../HTML/dashboard.html">LEADERBOARD</a></li>
                 <li class="nav-logo">
                     <img src="../Assets/Img/icons/Akahai-ico.svg" alt="Logo Akahai">
                 </li>
-                <li><a href="../HTML/sobre.html">SOBRE</a></li>
+                <li><a href="../HTML/Quiz/quiz.html">QUIZ</a></li>
                 <li><button onclick="deslogar()" class="btn-sair">SAIR</button></li>
             </ul>
         </nav>
@@ -117,4 +123,16 @@
     function irDash() {
         window.location.href = '../HTML/dashboard.html'
     }
+
+    function deslogar() {
+        mostrarPopUp("Até mais, surfista! Você foi deslogado com sucesso. Redirecionando para a página inicial...");
+        sessionStorage.clear();
+        setTimeout(() => { window.location.href = "../HTML/index.html" }, 2500);
+    }
+
+    function mostrarPopUp(mensagem) {
+        document.getElementById("textoDoPopUp").innerHTML = mensagem;
+        document.getElementById("meuPopUp").classList.remove("escondido");
+    }
+
 </script>
