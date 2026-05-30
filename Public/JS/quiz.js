@@ -17,6 +17,7 @@ function iniciar() {
   }
 }
 
+// o quiz de fato começa aqui!!!
 let alternativaSelecionada = 0;
 
 // recebe o valor da opção selecionada pelo usuário e interage com o CSS
@@ -92,7 +93,7 @@ function verResultado() {
   document.getElementById("mensagemFinal").innerHTML = mensagem;
 
   fetch("/usuarios/gravar-quiz", {
-    method: "POST", // post -> quando a egnte enviar 'body'
+    method: "POST", // post -> quando a gente for enviar 'body(json)'
     headers: {
       "Content-Type": "application/json",
     },

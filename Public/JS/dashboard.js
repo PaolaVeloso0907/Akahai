@@ -1,7 +1,7 @@
 let Numero_Quiz = 1;
 
 function buscarQuiz() {
-  // Verificando se o usuário está logado, caso contrário, redireciona para a página de login
+  // Verificando se o usuário está logado, caso contrário, redireciona para a página de login.
   if (
     sessionStorage.ID_USUARIO == undefined ||
     sessionStorage.ID_USUARIO == null
